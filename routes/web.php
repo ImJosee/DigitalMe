@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view();
-});
+Route::get('/', 'PostController@index');
 
 Route::get('/register', function() {
     return view('register');

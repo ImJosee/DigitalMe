@@ -12,9 +12,13 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('index', ['posts'=>Post::all()]);
+    public function index() {
+
+        $posts = Post::orderBy('views', 'DESC')
+            ->orderBy('created_at')
+            ->paginate(10);
+
+        return view('index', ['posts'=>$posts]);
     }
 
     /**
@@ -24,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**

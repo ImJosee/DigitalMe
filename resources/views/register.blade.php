@@ -14,6 +14,7 @@
             </div>
         </div>
         <form class="register-form" action="/register" method="post">
+            @csrf
             <div class="header-info">
                 <h2 class="register-h2">Crear una cuenta</h2>
                 <h1 class="header">
@@ -36,7 +37,7 @@
                     <label class="labels" for="nombre">Nombre</label>
                     <input type="text" class="form-control" name="name" id="nombre" value="<?=$_POST['name'] ?? ''?>">
                     <div class='error-name'>
-                    
+
                     </div>
                     </div>
                 <div class="col">
