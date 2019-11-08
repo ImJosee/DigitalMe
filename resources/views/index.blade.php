@@ -12,13 +12,13 @@
     <nav class="section-na navbar navbar-expand-lg navbar-light bg-light justify-content-center">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="abajo linksection" href="index.php">Lo mejor de digitalMe</a>
+            <a class="abajo linksection" href="index">Lo mejor de digitalMe</a>
         </li>
         <li class="nav-item">
-            <a class="abajo linksection" href="index.php">Categorias<a>
+            <a class="abajo linksection" href="index">Categorias<a>
         </li>
         <li class="nav-item">
-            <a class="abajo linksection" href="login.php">Escuelas y organizaciones</a>
+            <a class="abajo linksection" href="login">Escuelas y organizaciones</a>
         </li>
         </ul>
     </nav>
@@ -28,7 +28,7 @@
       <div class="row">
       @foreach($posts as $post)
         <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="publicacion">           
+            <div class="publicacion">
                 <a href="/posts/"><img src="images/publicacion2.jpg" alt=""></a>
                 <div>
                     <span>
@@ -42,4 +42,4 @@
     </div>
 
 </main>
-@endsection    
+@endsection

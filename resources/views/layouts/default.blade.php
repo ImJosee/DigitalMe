@@ -15,23 +15,22 @@
 
     @stack('styles')
 
-    <title>@yield('title', 'Peliculas')</title>
+    <title>@yield('title', 'DigitalMe')</title>
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.php"> <img class="brand-logo" src="images/dm-logo.svg" alt=""></a>
+        <a class="navbar-brand" href="/"> <img class="brand-logo" src="images/dm-logo.svg" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.php">Descubrir</a>
-            <a class="nav-item nav-link" href="faq.php">Ayuda</a>
-            <?=$myProfile ?? '<a class="nav-item nav-link" href="register.php">Registro</a>'?>
-            <?=$logout ?? ''?>
+            <a class="nav-item nav-link" href="/">Descubrir</a>
+            <a class="nav-item nav-link" href="faq">Ayuda</a>
+            <a class="nav-item nav-link" href="register">Registro</a>
         </div>
         <div class="d-flex flex-row">
-            <button type="button" class="btn btn-primary"><a class="iniciar" href="login.php">Iniciar sesion</a></button>
+            <button type="button" class="btn btn-primary"><a class="iniciar" href="login">Iniciar sesion</a></button>
             <p class="o">o</p>
             <a href="#"><img class="logos" src="images/busqueda.png" alt=""></a>
             <a href="#"><img class="logos" src="images/facebook.png" alt=""></a>

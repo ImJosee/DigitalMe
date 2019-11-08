@@ -3,10 +3,6 @@ body {
     font-family: montserrat;
 }
 
-nav.navbar {
-    z-index: 0;
-}
-
 .brand-logo {
   width: 200px;
 }
