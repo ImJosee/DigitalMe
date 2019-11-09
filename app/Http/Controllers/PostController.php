@@ -50,7 +50,11 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return view('showPost', ['post'=>Post::find($id)]);
+        $post = Post::find($id);
+        if($post != null) {
+            return view('showPost', ['post'=>$post]);
+        }
+        return view('error', ['error'=>'No se encontro el posteo con id '.$id]);
     }
 
     /**
