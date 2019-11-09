@@ -27,16 +27,21 @@
     <div class="publicaciones container">
       <div class="row">
       @foreach($posts as $post)
+        <a href="/posts/{{$post->id}}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
-                <a href="/posts/{{$post->id}}"><img src="images/publicacion2.jpg" alt=""></a>
+                <img src="images/publicacion2.jpg" alt="">
                 <div>
-                    <span>
-                    {{ $post->title }}.  Views: {{$post->views}}
+                    <span class="post-details">
+                    Titulo: {{ $post->title }}.
+                    </span>
+                    <span class="post-details">
+                    Vistas: {{$post->views}}.
                     </span>
                 </div>
             </div>
         </div>
+        </a>
       @endforeach
       </div>
     </div>
