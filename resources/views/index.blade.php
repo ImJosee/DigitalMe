@@ -29,7 +29,7 @@
       @foreach($posts as $post)
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
-                <a href="/posts/"><img src="images/publicacion2.jpg" alt=""></a>
+                <a href="/posts/{{$post->id}}"><img src="images/publicacion2.jpg" alt=""></a>
                 <div>
                     <span>
                     {{ $post->title }}.  Views: {{$post->views}}

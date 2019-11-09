@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/faq.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/faq.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
     @stack('styles')
 
@@ -19,7 +19,7 @@
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/"> <img class="brand-logo" src="images/dm-logo.svg" alt=""></a>
+        <a class="navbar-brand" href="/"> <img class="brand-logo" src="{{ asset('images/dm-logo.svg') }}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,8 +32,8 @@
         <div class="d-flex flex-row">
             <button type="button" class="btn btn-primary"><a class="iniciar" href="login">Iniciar sesion</a></button>
             <p class="o">o</p>
-            <a href="#"><img class="logos" src="images/busqueda.png" alt=""></a>
-            <a href="#"><img class="logos" src="images/facebook.png" alt=""></a>
+            <a href="#"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
+            <a href="#"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
             <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
         </div>
         </div>
