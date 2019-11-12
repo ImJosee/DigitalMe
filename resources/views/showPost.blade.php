@@ -17,12 +17,11 @@
         </ul>
     </nav>
 <main>
-    <div class="publicaciones container-fluid">
-          <div class=>
-        <a href="/posts/{{$post->id}}">
+    <div class="publicaciones container-fluid flex">
+          <div class="row">
             <div class="publicacion">
+        <a href="/posts/{{$post->id}}">
               <img src="{{ asset('images/publicacion2.jpg') }}" alt="">
-            </div>
         </a>
         </div>
         <div class="detalle-post">

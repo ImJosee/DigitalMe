@@ -240,9 +240,6 @@ h6.footer-h6 {
 
 .detalle-post {
   font-weight: bolder;
-}
-
-.container-fluid {
-  display: flex;
-  flex-direction: row;
+  margin-top: 30px;
+  margin-left: 60px;
 }
