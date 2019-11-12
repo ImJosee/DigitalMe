@@ -30,10 +30,17 @@
         <a href="/posts/{{$post->id}}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
+<<<<<<< HEAD
               <img src="images/publicacion2.jpg" alt="">
+=======
+                <img src="images/publicacion2.jpg" alt="">
+>>>>>>> 8c792251f57c8e92b84407ca57f3e530da665362
                 <div>
-                    <span>
-                    {{ $post->title }}.  Views: {{$post->views}}
+                    <span class="post-details">
+                    Titulo: {{ $post->title }}.
+                    </span>
+                    <span class="post-details">
+                    Vistas: {{$post->views}}.
                     </span>
                 </div>
             </div>

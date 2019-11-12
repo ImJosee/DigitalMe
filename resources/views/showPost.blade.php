@@ -3,6 +3,7 @@
 @section('title', 'Post especifico')
 
 @section('content')
+<<<<<<< HEAD
     <nav class="section-na navbar navbar-expand-lg navbar-light bg-light justify-content-center">
         <ul class="navbar-nav">
         <li class="nav-item">
@@ -34,3 +35,21 @@
 
 </main>
 @endsection
+=======
+<main>
+    <div class="publicaciones container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="publicacion">
+                <div>
+                    <span>
+                    {{ $post->title }}.  Views: {{$post->views}}
+                    </span>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</main>
+@endsection    
+>>>>>>> 8c792251f57c8e92b84407ca57f3e530da665362
