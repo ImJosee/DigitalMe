@@ -18,7 +18,7 @@
     <title>@yield('title', 'DigitalMe')</title>
 </head>
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="/"> <img class="brand-logo" src="{{ asset('images/dm-logo.svg') }}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,9 +32,15 @@
         <div class="d-flex flex-row">
             <button type="button" class="btn btn-primary"><a class="iniciar" href="login">Iniciar sesion</a></button>
             <p class="o">o</p>
+            <div class="google-facebook">
             <a href="#"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
             <a href="#"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
-            <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
+            </div>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
+
+            </form>
         </div>
         </div>
     </nav>

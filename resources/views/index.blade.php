@@ -9,7 +9,7 @@
     </div>
     </section>
     <section>
-    <nav class="section-na navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <nav class="section-na navbar navbar-expand-lg navbar-light bg-light justify-content-center sticky-top-2">
         <ul class="navbar-nav">
         <li class="nav-item">
             <a class="abajo linksection" href="index">Lo mejor de digitalMe</a>
@@ -27,9 +27,10 @@
     <div class="publicaciones container">
       <div class="row">
       @foreach($posts as $post)
+        <a href="/posts/{{$post->id}}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
-                <a href="/posts/{{$post->id}}"><img src="images/publicacion2.jpg" alt=""></a>
+              <img src="images/publicacion2.jpg" alt="">
                 <div>
                     <span>
                     {{ $post->title }}.  Views: {{$post->views}}
@@ -37,6 +38,7 @@
                 </div>
             </div>
         </div>
+        </a>
       @endforeach
       </div>
     </div>

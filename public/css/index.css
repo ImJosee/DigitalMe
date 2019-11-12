@@ -11,7 +11,8 @@ body {
     border-radius: 50px;
     font-size: 14px;
     font-weight: bolder;
-    margin-left: 10px;
+    margin: auto;
+    height: 40px;
 }
 
 .iniciar {
@@ -27,9 +28,15 @@ body {
 
 .lupa {
     font-size: 37px;
-    margin-left: 120px;
     color: white;
-    margin-right: -150px;
+}
+
+.google-facebook{
+  margin-top: 10px;
+}
+
+.form-inline{
+  margin-left: 150px;
 }
 
 .logos {
@@ -40,7 +47,6 @@ body {
 
 
 .descripcion {
-    margin-top:75px;
     background-image: url(../images/descripcion.jpg);
     background-size: cover;
     height: 240px;
@@ -51,8 +57,10 @@ body {
     position: static;
 }
 
+
 .date {
     padding-top: 55px;
+    margin-top: 0px;
 }
 
 .nav-item {
@@ -65,7 +73,6 @@ body {
 
 .section-na {
     padding: 20px;
-    position: sticky;
 }
 
 .abajo {

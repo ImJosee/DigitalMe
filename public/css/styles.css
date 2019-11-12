@@ -237,3 +237,12 @@ p.footer-text {
 h6.footer-h6 {
     color: #fff;
 }
+
+.detalle-post {
+  font-weight: bolder;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: row;
+}
