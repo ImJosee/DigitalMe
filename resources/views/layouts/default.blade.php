@@ -37,9 +37,8 @@
             <a href="#"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
             </div>
             <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
                 <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
-
             </form>
         </div>
         </div>

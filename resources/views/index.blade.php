@@ -3,10 +3,10 @@
 @section('title', 'Bienvenido a digitalme')
 
 @section('content')
-<section>
-    <div class="descripcion">
-    <h2 class="date">Date a conocer.</h2>
-    </div>
+    <section>
+        <div class="descripcion">
+            <h2 class="date">Date a conocer.</h2>
+        </div>
     </section>
     <section>
     <nav class="section-na navbar navbar-expand-lg navbar-light bg-light justify-content-center sticky-top-2">
@@ -30,11 +30,7 @@
         <a href="/posts/{{$post->id}}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
-<<<<<<< HEAD
               <img src="images/publicacion2.jpg" alt="">
-=======
-                <img src="images/publicacion2.jpg" alt="">
->>>>>>> 8c792251f57c8e92b84407ca57f3e530da665362
                 <div>
                     <span class="post-details">
                     Titulo: {{ $post->title }}.
