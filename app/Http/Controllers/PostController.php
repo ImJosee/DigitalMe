@@ -30,6 +30,16 @@ class PostController extends Controller {
     public function show($id)
     {
         $post = Post::findOrFail($id);
+        /*
+            No deberias poder entrar cuantas veces quieras
+            a tu post para darte muchas visitas.
+        */
+        $post->views += 1;
+        $post->updated_at = time();
+        $post->update();
+        /*
+            Te lleva a la vista con las visitsa actualizadas.
+        */
         return view('showPost', ['post'=>$post]);
     }
 
