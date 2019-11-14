@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('user_type', ['NormalUser', 'EnterpriseUser']);
-            $table->string('web');
-            $table->string('profile_image');
-            $table->string('location', 100);
+            $table->string('web')->nullable();
+            $table->string('profile_image')->nullable();
+            $table->string('location', 100)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

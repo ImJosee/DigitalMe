@@ -9,11 +9,15 @@ class PostController extends Controller {
 
     public function index(Request $request) {
         if(isset($request['search'])) {
-            dd($request['search']);
+            $search = $request['search'];
+            if(is_numeric($search)) {
+                return redirect()->action('PostController@show', [
+                    'id' => $request['search']
+                ]);
+            }
         }
 
-        $posts = Post::orderBy('views', 'DESC')
-            ->orderBy('created_at')
+        $posts = Post::orderBy('created_at', 'DESC')
             ->paginate(12);
 
         return view('index', ['posts'=>$posts]);
@@ -33,17 +37,7 @@ class PostController extends Controller {
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        /*
-            No deberias poder entrar cuantas veces quieras
-            a tu post para darte muchas visitas.
-        */
-        $post->views += 1;
-        $post->updated_at = time();
-        $post->update();
-        /*
-            Te lleva a la vista con las visitsa actualizadas.
-        */
-        return view('showPost', ['post'=>$post]);
+        return view('posts.showPost', ['post'=>$post]);
     }
 
     public function edit($id)

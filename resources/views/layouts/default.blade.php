@@ -36,7 +36,7 @@
             <a href="#"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
             <a href="#"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
             </div>
-            <form class="form-inline">
+            <form class="form-inline" action="{{ url('posts') }}"> 
                 <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
                 <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
             </form>

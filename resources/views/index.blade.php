@@ -33,10 +33,10 @@
               <img src="images/publicacion2.jpg" alt="">
                 <div>
                     <span class="post-details">
-                    Titulo: {{ $post->title }}.
+                    Post: {{$post->id}}.
                     </span>
                     <span class="post-details">
-                    Vistas: {{$post->views}}.
+                    Vistas: 0
                     </span>
                 </div>
             </div>
