@@ -7,11 +7,14 @@ use App\Post;
 
 class PostController extends Controller {
 
-    public function index() {
+    public function index(Request $request) {
+        if(isset($request['search'])) {
+            dd($request['search']);
+        }
 
         $posts = Post::orderBy('views', 'DESC')
             ->orderBy('created_at')
-            ->paginate(10);
+            ->paginate(12);
 
         return view('index', ['posts'=>$posts]);
     }
