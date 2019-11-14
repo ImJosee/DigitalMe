@@ -31,7 +31,8 @@ body {
     border-radius: 50px;
     font-size: 14px;
     background: linear-gradient(90deg, rgba(2,31,158,1) 0%, rgba(0,206,255,1) 100%);
-    border: 1px solid rgba(0,206,255,0.8);;
+    border: 1px solid rgba(0,206,255,0.8);
+    font-weight: bolder;
 }
 
 .form-control-search {
