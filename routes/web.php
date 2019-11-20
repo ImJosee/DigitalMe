@@ -4,9 +4,6 @@ Route::get('/', 'PostController@index');
 
 Route::get('/index', 'PostController@index');
 
-Route::get('/registera', function() {
-    return view('register');
-});
 Route::get('/login', function() {
     return view('login');
 });

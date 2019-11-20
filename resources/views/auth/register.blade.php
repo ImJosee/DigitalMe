@@ -76,7 +76,7 @@
                 <div class="col">
                     <label class="labels mr-sm-2" for="birthdayMonth">{{ __('Month') }}</label>
                     <select name="birthdayMonth" class="custom-select" id="birthdayMonth">
-                        <option value="" disabled>Please Select</option>
+                        <option value="" selected disabled>Please Select</option>
                         <option value="01">January</option>
                         <option value="02">February</option>
                         <option value="03">March</option>
