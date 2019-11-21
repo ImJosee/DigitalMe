@@ -32,6 +32,7 @@
                         <a class="nav-item nav-link" href="faq">Ayuda</a>
                         <a class="nav-item nav-link" href="profile">Mi perfil</a>
                         <a class="nav-item nav-link" href="posts/new">Nuevo post</a>
+                        <a class="nav-item nav-link" href="posts/new">Vacantes</a>
                       </div>
                     </div>
                         @else
