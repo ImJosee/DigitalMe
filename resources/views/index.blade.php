@@ -24,21 +24,21 @@
     </nav>
     </section>
 <main>
-    @if(request()->has('search')) 
+    @if(request()->has('search'))
         @if(count($posts) == 0)
-        <h2 id="search-results">No se encontraron resultados para: {{request('search')}}</h2>    
+        <h2 id="search-results">No se encontraron resultados para: {{request('search')}}</h2>
         @else
         <h2 id="search-results">Resultados para: {{request('search')}} (Total: {{$posts->total()}})</h2>
         @endif
     @endif
-    <div class="publicaciones container">
-      <div class="row">
+    <div class="publicaciones container justify-content-center">
+      <div class="row justify-content-center">
       @foreach($posts as $post)
         <a href="/posts/{{$post->id}}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
               <img src="images/publicacion2.jpg" alt="">
-                <div>
+                <div class="info-post">
                     <span class="post-details">
                     Post: {{$post->id}}.
                     </span>
@@ -52,7 +52,7 @@
       @endforeach
       </div>
     </div>
-    @if(request()->has('search')) 
+    @if(request()->has('search'))
         {{$posts->appends(request()->all())->links()}}
     @endif
 

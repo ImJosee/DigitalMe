@@ -17,48 +17,60 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixe-top">
         <a class="navbar-brand" href="/"> <img class="brand-logo" src="{{ asset('images/dm-logo.svg') }}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
               <div class="container-fluid">
-                <div class="row d-flex justify-content-between">
-                  <div class="col-md-4 col-lg-4">
+              <div class="row d-flex justify-content-between">
+                @auth
+                <div class="col-md-6 col-lg-6">
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="/">Descubrir</a>
-                        <a class="nav-item nav-link" href="{{ url('/faq') }}">Ayuda</a>
-                        @auth
-                        <a class="nav-item nav-link" href="{{ url('/profile') }}">Mi perfil</a>
-                        <a class="nav-item nav-link" href="{{ url('/posts/new') }}">Nuevo post</a>
-                        @else
-                        <a class="nav-item nav-link" href="{{ url('/register') }}">Registro</a>
-                        @endif
+                        <a class="nav-item nav-link" href="faq">Ayuda</a>
+                        <a class="nav-item nav-link" href="profile">Mi perfil</a>
+                        <a class="nav-item nav-link" href="posts/new">Nuevo post</a>
+                        <a class="nav-item nav-link" href="posts/new">Vacantes</a>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-4">
-                    @auth
-                        <button onclick="document.getElementById('logout-form').submit()" type="button" class="btn btn-primary">Cerrar sesion</button>  
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    @else
-                        <button onclick="redirectToLogin()" type="button" class="btn btn-primary">Iniciar sesión</button>
-                        <p class="o">o</p>
-                        <a href="#"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
-                        <a href="#"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
-                    @endif
+                <div class="col-md-3 col-lg-3">
+                    <button onclick="document.getElementById('logout-form').submit()" type="button" class="btn btn-primary">Cerrar sesion</button>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
-
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-3 col-lg-3">
                     <form class="form-inline" action="{{ url('/posts') }}" method="GET">
                     <input class="form-control-search mr-sm-2" name="search" type="search" placeholder="Search..." aria-label="Search">
                     <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
                     </form>
                 </div>
+                @else
+                <div class="col-md-4 col-lg-4">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="/">Descubrir</a>
+                        <a class="nav-item nav-link" href="faq">Ayuda</a>
+                        <a class="nav-item nav-link" href="register">Registro</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <button onclick="redirectToLogin()" type="button" class="btn btn-primary">Iniciar sesión</button>
+                    <p class="o">o</p>
+                    <a href="#"><img class="logos" src="images/busqueda.png" alt=""></a>
+                    <a href="#"><img class="logos" src="images/facebook.png" alt=""></a>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                    <form class="form-inline" action="{{ url('/posts') }}" method="GET">
+                    <input class="form-control-search mr-sm-2" name="search" type="search" placeholder="Search..." aria-label="Search">
+                    <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
+                    </form>
+                </div>
+                @endif
             </div>
         </div>
+      </div>
     </nav>
     @yield('content')
 
