@@ -91,6 +91,7 @@
   justify-content:center;
 }
 
+
 .publicacion:hover {
     transform: scale(1.1);
 }
@@ -106,6 +107,7 @@ span.post-details {
     color: black;
 }
 
+
 h2 {
     color:white;
     font-weight: bolder;
@@ -115,8 +117,6 @@ h2 {
 .copy {
     color: white
 }
-
-
 
 /**** CSS DE RESULTADOS ****/
 
