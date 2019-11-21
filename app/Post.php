@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Post extends Model {
 
@@ -14,5 +15,9 @@ class Post extends Model {
         'Subtitulo: '.$this->subtitle.
         'Contenido de post: '.$this->content; 
     }
-    
+
+    public function user() {
+        return $this->belongTo(User::class, 'user_id');
+    }
+
 }

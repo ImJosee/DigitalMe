@@ -30,7 +30,7 @@ class PostController extends Controller {
 
     public function search($query) {
         $post = Post::where('title', 'LIKE' , '%'.$query.'%')->get();
-        return view('posts.showPost', ['post'=>$post]);
+        return view('post.showPost', ['post'=>$post]);
     }
 
     public function store(Request $request)
@@ -41,7 +41,7 @@ class PostController extends Controller {
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        return view('posts.showPost', ['post'=>$post]);
+        return view('post.showPost', ['post'=>$post]);
     }
 
     public function edit($id)

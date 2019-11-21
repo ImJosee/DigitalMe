@@ -28,26 +28,26 @@
                   <div class="col-md-4 col-lg-4">
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="/">Descubrir</a>
-                        <a class="nav-item nav-link" href="faq">Ayuda</a>
+                        <a class="nav-item nav-link" href="{{ url('/faq') }}">Ayuda</a>
                         @auth
-                        <a class="nav-item nav-link" href="profile">Mi perfil</a>
-                        <a class="nav-item nav-link" href="posts/new">Nuevo post</a>
+                        <a class="nav-item nav-link" href="{{ url('/profile') }}">Mi perfil</a>
+                        <a class="nav-item nav-link" href="{{ url('/posts/new') }}">Nuevo post</a>
                         @else
-                        <a class="nav-item nav-link" href="register">Registro</a>
+                        <a class="nav-item nav-link" href="{{ url('/register') }}">Registro</a>
                         @endif
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4">
                     @auth
-                        <button onclick="document.getElementById('logout-form').submit()" type="button" class="btn btn-primary">Cerrar sesion</button>
+                        <button onclick="document.getElementById('logout-form').submit()" type="button" class="btn btn-primary">Cerrar sesion</button>  
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                     @else
                         <button onclick="redirectToLogin()" type="button" class="btn btn-primary">Iniciar sesión</button>
                         <p class="o">o</p>
-                        <a href="#"><img class="logos" src="images/busqueda.png" alt=""></a>
-                        <a href="#"><img class="logos" src="images/facebook.png" alt=""></a>
+                        <a href="#"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
+                        <a href="#"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
                     @endif
                 </div>
 
