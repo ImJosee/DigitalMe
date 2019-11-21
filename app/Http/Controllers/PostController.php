@@ -8,25 +8,29 @@ use App\Post;
 class PostController extends Controller {
 
     public function index(Request $request) {
-        if(isset($request['search'])) {
-            $search = $request['search'];
-            if(is_numeric($search)) {
-                return redirect()->action('PostController@show', [
-                    'id' => $request['search']
-                ]);
-            }
+        $posts = Post::query();
+
+        if($request->has('search')) {
+            $search = $request->get('search');
+            $posts->where('title', 'like', '%'.$search.'%');
         }
 
-        $posts = Post::orderBy('created_at', 'DESC')
+        $data = $posts
+            ->orderBy('created_at', 'DESC')
             ->paginate(12);
 
-        return view('index', ['posts'=>$posts]);
+        return view('index', ['posts'=>$data]);
     }
 
 
     public function create()
     {
 
+    }
+
+    public function search($query) {
+        $post = Post::where('title', 'LIKE' , '%'.$query.'%')->get();
+        return view('posts.showPost', ['post'=>$post]);
     }
 
     public function store(Request $request)

@@ -1,4 +1,4 @@
-body {
+  body {
     font-family: montserrat;
 }
 
@@ -118,7 +118,18 @@ h2 {
 
 
 
+/**** CSS DE RESULTADOS ****/
 
+h2#search-results {
+  font-size: 26px;
+  margin-top: 1em;
+  text-align: center;
+  color: #000;
+}
+
+#paginador {
+  margin-top: 20px;
+}
 
 /**** ACA EMPIEZA EL CSS DEL LOGIN ****/
 

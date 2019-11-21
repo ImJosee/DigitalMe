@@ -24,6 +24,13 @@
     </nav>
     </section>
 <main>
+    @if(request()->has('search')) 
+        @if(count($posts) == 0)
+        <h2 id="search-results">No se encontraron resultados para: {{request('search')}}</h2>    
+        @else
+        <h2 id="search-results">Resultados para: {{request('search')}} (Total: {{$posts->total()}})</h2>
+        @endif
+    @endif
     <div class="publicaciones container">
       <div class="row">
       @foreach($posts as $post)
@@ -45,6 +52,9 @@
       @endforeach
       </div>
     </div>
+    @if(request()->has('search')) 
+        {{$posts->appends(request()->all())->links()}}
+    @endif
 
 </main>
 @endsection

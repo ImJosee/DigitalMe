@@ -8,8 +8,6 @@
     <script src="https://kit.fontawesome.com/2260a42856.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/faq.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
@@ -28,35 +26,39 @@
               <div class="container-fluid">
                 <div class="row d-flex justify-content-between">
                   <div class="col-md-4 col-lg-4">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link" href="/">Descubrir</a>
-                <a class="nav-item nav-link" href="faq">Ayuda</a>
-                <a class="nav-item nav-link" href="register">Registro</a>
-              </div>
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="/">Descubrir</a>
+                        <a class="nav-item nav-link" href="faq">Ayuda</a>
+                        @auth
+                        <a class="nav-item nav-link" href="profile">Mi perfil</a>
+                        <a class="nav-item nav-link" href="posts/new">Nuevo post</a>
+                        @else
+                        <a class="nav-item nav-link" href="register">Registro</a>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    @auth
+                        <button onclick="document.getElementById('logout-form').submit()" type="button" class="btn btn-primary">Cerrar sesion</button>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @else
+                        <button onclick="redirectToLogin()" type="button" class="btn btn-primary">Iniciar sesión</button>
+                        <p class="o">o</p>
+                        <a href="#"><img class="logos" src="images/busqueda.png" alt=""></a>
+                        <a href="#"><img class="logos" src="images/facebook.png" alt=""></a>
+                    @endif
+                </div>
 
-          </div>
-          <div class="col-md-4 col-lg-4">
-          <button type="button" class="btn btn-primary">Iniciar sesión</button>
-          <p class="o">o</p>
-          <a href="#"><img class="logos" src="images/busqueda.png" alt=""></a>
-          <a href="#"><img class="logos" src="images/facebook.png" alt=""></a>
-
-          </div>
-
-          <div class="col-md-4 col-lg-4">
-            <form class="form-inline">
-              <input class="form-control-search mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-              <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
-            </form>
-
-          </div>
-
-
+                <div class="col-md-4 col-lg-4">
+                    <form class="form-inline" action="{{ url('/posts') }}" method="GET">
+                    <input class="form-control-search mr-sm-2" name="search" type="search" placeholder="Search..." aria-label="Search">
+                    <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
+                    </form>
+                </div>
+            </div>
         </div>
-
-      </div>
-
-
     </nav>
     @yield('content')
 
@@ -154,6 +156,7 @@
             </div>
         </div>
     </footer>
+    <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
