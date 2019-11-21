@@ -18,6 +18,8 @@ Route::post('/posts', 'PostController@store');
 
 Route::get('/profile', 'UserController@index');
 
+Route::get('/profile/{id}/edit', 'UserController@edit')->middleware('user.verifyid');
+
 Route::get('/posts/{id}', 'PostController@show');
 
 Route::get('/posts/{id}/edit', 'PostController@edit');

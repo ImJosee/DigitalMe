@@ -29,10 +29,10 @@
                 <div class="col-md-6 col-lg-6">
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="/">Descubrir</a>
-                        <a class="nav-item nav-link" href="faq">Ayuda</a>
-                        <a class="nav-item nav-link" href="profile">Mi perfil</a>
-                        <a class="nav-item nav-link" href="posts/new">Nuevo post</a>
-                        <a class="nav-item nav-link" href="posts/new">Vacantes</a>
+                        <a class="nav-item nav-link" href="{{ url('/faq') }}">Ayuda</a>
+                        <a class="nav-item nav-link" href="{{ url('/profile') }}">Mi perfil</a>
+                        <a class="nav-item nav-link" href="{{ url('/posts/new') }}">Nuevo post</a>
+                        <a class="nav-item nav-link" href="{{ url('/posts') }}">Vacantes</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
@@ -56,10 +56,10 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4">
-                    <button onclick="redirectToLogin()" type="button" class="btn btn-primary">Iniciar sesión</button>
+                    <button onclick="redirectTo('login')" type="button" class="btn btn-primary">Iniciar sesión</button>
                     <p class="o">o</p>
-                    <a href="#"><img class="logos" src="images/busqueda.png" alt=""></a>
-                    <a href="#"><img class="logos" src="images/facebook.png" alt=""></a>
+                    <a href="#"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
+                    <a href="#"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
                     </div>
                     <div class="col-md-4 col-lg-4">
                     <form class="form-inline" action="{{ url('/posts') }}" method="GET">
@@ -88,7 +88,7 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h6 class="footer-h6 text-uppercase mb-4 font-weight-bold">Soporte</h6>
                 <p class="footer-text">
-                <a href="#!">Contacto</a>
+                <a href="/">Contacto</a>
                 </p>
                 <p class="footer-text">
                 <a href="#!">A</a>
@@ -104,16 +104,16 @@
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h6 class="footer-h6  text-uppercase mb-4 font-weight-bold">Links</h6>
                 <p class="footer-text">
-                <a href="perfil.php">Tu perfil</a>
+                <a href="{{ url('/profile')}}">Tu perfil</a>
                 </p>
                 <p class="footer-text">
-                <a href="#!">Descubrir</a>
+                <a href="/">Descubrir</a>
                 </p>
                 <p class="footer-text">
-                <a href="#!">Ayuda</a>
+                <a href="{{ url('/faq') }}">Ayuda</a>
                 </p>
                 <p class="footer-text">
-                <a href="#!">Empresas</a>
+                <a href="/">Empresas</a>
                 </p>
             </div>
             <hr class="w-100 clearfix d-md-none">
@@ -133,7 +133,7 @@
             <div class="row d-flex align-items-center">
             <div class="col-md-7 col-lg-8">
                 <p class="footer-text text-center text-md-left">© 2018 Copyright:
-                <a href="https://mdbootstrap.com/education/bootstrap/">
+                <a href="#">
                     <strong> digitalMe.com</strong>
                 </a>
                 </p>

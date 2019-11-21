@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
 
-    public function index()
-    {
-        
+    public function index(Request $request) {
+        if(Auth::check()) {
+            return redirect()->action('UserController@show', ['id'=>Auth::user()->id]);
+        }
+        return redirect('/login');
     }
 
   
@@ -27,7 +30,12 @@ class UserController extends Controller
 
     public function show($id) {
         $user = User::findOrFail($id);
-        return view('user.profile', ['user'=>$user]);
+        $userPosts = $user->posts()->paginate(12);
+        return view('user.profile', [
+            'user' => $user,
+            'userPosts' => $userPosts
+            ]
+        );
     }
 
     public function edit($id)
