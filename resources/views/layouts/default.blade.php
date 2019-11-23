@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4">
-                    <button onclick="redirectTo('login')" type="button" class="btn btn-primary">Iniciar sesión</button>
+                    <button id="login-button" type="button" class="profile-button btn btn-primary">Iniciar sesión</button>
                     <p class="o">o</p>
                     <a href="#"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
                     <a href="#"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>

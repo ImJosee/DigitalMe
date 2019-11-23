@@ -171,6 +171,7 @@ h2#search-results {
 }
 
 .h2Login {
+  color: #000;
   font-size: 15px;
 }
 
@@ -180,7 +181,7 @@ h2#search-results {
 }
 
 .container-login{
-    margin-top: 80px;
+    margin-top: 35px;
 }
 
 a:hover{
@@ -332,15 +333,21 @@ img.new-post-icon {
 
 /**** ACA EMPIEZA EL CSS DEL REGISTRO ****/
 
+.form-container {
+  width: 100%;
+}
+
 .register-form {
   background-color: white;
   padding: 20px;
   border-radius: 15px;
+  margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
 
 div.div-reg-container {
+  padding: 5px;
   background-image: url(../images/desert.jpg);
 }
 
@@ -353,12 +360,14 @@ div.header-container h1 {
  margin: 10px auto;
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 769px) {
   .register-form {
-    width: 40%;
+    width: 50%;
+  }
+  div.div-reg-container {
+    padding: 20px;
   }
 }
-
 /**** ACA EMPIEZA EL CSS DEL FOOTER GENERAL ****/
 
 .footer {

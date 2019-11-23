@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -31,9 +32,10 @@ class UserController extends Controller
     public function show($id) {
         $user = User::findOrFail($id);
         $userPosts = $user->posts()->paginate(12);
+
         return view('user.profile', [
             'user' => $user,
-            'userPosts' => $userPosts
+            'userPosts' => $userPosts,
             ]
         );
     }

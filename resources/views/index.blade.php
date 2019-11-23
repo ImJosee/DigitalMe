@@ -37,7 +37,8 @@
         <a href="/posts/{{$post->id}}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
-              <img src="images/publicacion2.jpg" alt="">
+              <?php $test = 'images/publicacion'.rand(1,12).'.jpg'?>
+              <img src="{{ asset($test) }}" alt="">
                 <div class="info-post">
                     <span class="post-details">
                     Post: {{$post->id}}.

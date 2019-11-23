@@ -8,7 +8,7 @@
 @section('content')
 <div class="container-fluid container-login">
       <div class="bloque-inicio col-sm-12 col-md-10 col-lg-6 col-xl-4">
-        <h2 class="inicia h2Login">Inicia  sesíon para continuar</h2>
+        <h3 class="inicia h2Login">Inicia  sesíon para continuar</h3>
         <h1 class="h1Login">DigitalMe</h1>
         <form action="{{ route('login') }}" method="POST">
           @csrf

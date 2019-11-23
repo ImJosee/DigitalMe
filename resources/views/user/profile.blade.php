@@ -14,20 +14,29 @@
               <li>Empresa</li>
               <li> <a href="">www.digital-me.com</a> </li>
               <li> <a href=""><img src="{{ asset('images/location.svg') }}" class="location-icon" alt="location icon">Lugar</a> </li>
-              <li><a href="/followers/{{$user->id}}">Seguidores: {{$user->followers()->paginate(1)->total()}}</a></li>
+              <li><a href="/followers/{{$user->id}}">Seguidores: {{count($user->followers()->getResults())}}</a></li>
             </ul>
         </div>
         <div class="">
             <ul class="fol-mes-buttons">
             @auth
-                <button class="seguir" type="submit" name="seguir">Seguir</button>
-                <button class="mensaje"type="submit" name="mensaje">Mensaje</button>
-                @if(Auth::user()->id === $user->id)
-                    <button onclick="redirectTo('profile/{{$user->id}}/edit')" class="seguir"type="submit" name="edit-profile">Editar perfil</button>
+                <form id="follow-form" action="/follow/{{$user->id}}" method="POST">
+                    @csrf
+                    <button id="follow-button" class="profile-button seguir" type="submit" name="follow">
+                        @if(auth()->user()->follows->contains('id', $user->id))
+                            Dejar de seguir
+                        @else
+                            Seguir
+                        @endif
+                    </button>
+                </form>                
+                <button id="send-message-button" class="profile-button mensaje"type="submit" name="message">Mensaje</button>
+                @if(auth()->user()->id === $user->id)
+                    <button id="edit-profile-button" class="profile-button seguir"type="submit" name="edit-profile">Editar perfil</button>
                 @endif
             @else
-                <button onclick="redirectTo('login')" class="seguir" type="submit" name="seguir">Seguir</button>
-                <button onclick="redirectTo('login')" class="mensaje"type="submit" name="mensaje">Mensaje</button>
+                <button id="follow-button" class="profile-button seguir" type="submit" name="follow">Seguir</button>
+                <button id="send-message-button" class="profile-button mensaje"type="submit" name="message">Mensaje</button>
             @endif
           </ul>
         </div>
@@ -59,7 +68,7 @@
                 @endforeach
             @else
                 @auth
-                    @if(Auth::user()->id === $user->id)
+                    @if(auth()->user()->id === $user->id)
                         <h2 id="no-posts">No tienes publicaciones aún</h2>
                         <div class="new-post-icon-container">
                             <a href="{{ url('/posts/new')}}"><img src="{{ asset('images/plus.png') }}" class="new-post-icon" alt="add new post icon"></a>

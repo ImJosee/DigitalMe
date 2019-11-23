@@ -18,7 +18,7 @@ Route::post('/posts', 'PostController@store');
 
 Route::get('/profile', 'UserController@index');
 
-Route::get('/profile/{id}/edit', 'UserController@edit')->middleware('user.verifyid');
+Route::get('/profile/{id}/edit', 'UserController@edit')->middleware('auth')->middleware('user.verifyid');
 
 Route::get('/posts/{id}', 'PostController@show');
 
@@ -29,6 +29,8 @@ Route::patch('/posts/{id}', 'PostController@update');
 Route::delete('/posts/{id}', 'PostController@destroy');
 
 Route::get('/profile/{id}', 'UserController@show');
+
+Route::post('/follow/{id}', 'FollowersController@store')->middleware('auth');;
 
 Auth::routes();
 

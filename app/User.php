@@ -42,15 +42,19 @@ class User extends Authenticatable
         return $this->name . ' ' . $this->last_name;
     }
 
+    /*public function getRouteKeyName() {
+        return 'name';
+    }*/
+
     public function posts() {
         return $this->hasMany(Post::class, 'user_id');
     }
 
     public function follows() {
-        return $this->belongsToMany(User::class, 'follows', 'follow_id', 'user_id');
+        return $this->belongsToMany(User::class, 'follows', 'follower_id', 'user_id');
     }
 
     public function followers() {
-        return $this->belongsToMany(User::class, 'follows', 'user_id', 'follow_id');
+        return $this->belongsToMany(User::class, 'follows', 'user_id', 'follower_id');
     }
 }
