@@ -2,7 +2,6 @@
     font-family: montserrat;
 }
 
-
 /** ACA EMPIEZA EL CSS DEL HEADER**/
 
 .brand-logo {
@@ -35,6 +34,10 @@
     font-weight: bolder;
 }
 
+button.save {
+  margin-top: 10px;
+}
+
 .form-control-search {
   width: 175px;
   height: 35px;
@@ -55,8 +58,8 @@
     height: 240px;
     text-align: center;
     background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
+	  background-size: cover;
+	  background-repeat: no-repeat;
     position: static;
 }
 
@@ -84,6 +87,13 @@
 
 .publicacion img {
   width: 100%;
+  height: 220px;
+  border-radius: 5px;
+  margin-top: 30px;
+  justify-content:center;
+}
+
+img#post-detail {
   width: 330px;
   height: 220px;
   border-radius: 5px;
@@ -91,6 +101,44 @@
   justify-content:center;
 }
 
+div.info-post {
+  display: flex;
+}
+
+div.post-info-user-container {
+  display: inline;
+}
+
+div.post-info-data {
+  margin-left: auto;
+}
+
+img#view-icon {
+  margin: 0px;
+  left: 10px;
+  width: 16px; 
+  height: 16px;
+}
+
+img#like-icon {
+  margin: 0px;
+  left: 10px;
+  width: 12px; 
+  height: 12px;
+}
+
+
+a#post-info-user {
+  margin-top: 8px;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+}
+a#post-info-user:hover {
+  text-decoration: none;
+  color: gray;
+  font-size: 15px;
+}
 
 .publicacion:hover {
     transform: scale(1.1);
@@ -106,7 +154,6 @@ span.post-details {
     font-size: 1em;
     color: black;
 }
-
 
 h2 {
     color:white;
@@ -288,7 +335,6 @@ ul.fol-mes-buttons {
 
 .publicacion-perfil img {
   width: 100%;
-  width: 330px;
   height: 220px;
   border-radius: 5px;
   margin-top: 30px;
@@ -352,12 +398,21 @@ div.div-reg-container {
 }
 
 div.header-container div img {
-  display: none;
+  display: none;  
 }
 
 div.header-container h1 {
  text-align: center;
  margin: 10px auto;
+}
+
+@media (min-width: 769px) {
+  .register-form {
+    width: 50%;
+  }
+  div.div-reg-container {
+    padding: 20px;
+  }
 }
 
 @media (min-width: 769px) {

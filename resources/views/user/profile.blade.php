@@ -20,6 +20,11 @@
         <div class="">
             <ul class="fol-mes-buttons">
             @auth
+                <button id="send-message-button" class="profile-button mensaje"type="submit" name="message">Mensaje</button>
+                @if(auth()->user()->id === $user->id)
+                    <button id="edit-profile-button" data-userid="{{$user->id}}" class="profile-button seguir"type="submit" name="edit-profile">Editar perfil</button>
+                    <button id="follows-button" class="profile-button seguir follows" type="submit" name="follows">Seguidos</button>
+                @else 
                 <form id="follow-form" action="/follow/{{$user->id}}" method="POST">
                     @csrf
                     <button id="follow-button" class="profile-button seguir" type="submit" name="follow">
@@ -29,14 +34,11 @@
                             Seguir
                         @endif
                     </button>
-                </form>                
-                <button id="send-message-button" class="profile-button mensaje"type="submit" name="message">Mensaje</button>
-                @if(auth()->user()->id === $user->id)
-                    <button id="edit-profile-button" class="profile-button seguir"type="submit" name="edit-profile">Editar perfil</button>
+                </form>  
                 @endif
             @else
-                <button id="follow-button" class="profile-button seguir" type="submit" name="follow">Seguir</button>
-                <button id="send-message-button" class="profile-button mensaje"type="submit" name="message">Mensaje</button>
+                <button onclick="redirectTo('login')" id="follow-button" class="profile-button seguir" type="submit" name="follow">Seguir</button>
+                <button onclick="redirectTo('login')" id="send-message-button" class="profile-button mensaje"type="submit" name="message">Mensaje</button>
             @endif
           </ul>
         </div>

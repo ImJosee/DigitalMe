@@ -94,10 +94,20 @@
                     <div class="col">
                         <label class="labels" for="birthdayDay">{{ __('Day') }}</label>
                         <input type="text" class="form-control" name="birthdayDay" id="birthdayDay" value="{{ old('birthdayDay') }}" required>
+                        @error('birthdayDay')
+                            <div class="error-password">
+                                <strong style="color: red">{{ $message }}</strong>
+                            </div>
+                        @enderror
                     </div>
                     <div class="col">
                         <label class="labels" for="birthdayYear">{{ __('Year') }}</label>
                         <input type="text" class="form-control" name="birthdayYear" id="birthdayYear" value="{{ old('birthdayYear') }}" required>
+                        @error('birthdayYear')
+                            <div class="error-password">
+                                <strong style="color: red">{{ $message }}</strong>
+                            </div>
+                        @enderror
                     </div>
                     
                     @error('birthday')

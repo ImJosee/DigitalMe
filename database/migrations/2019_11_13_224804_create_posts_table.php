@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title', 100);
             $table->string('subtitle')->nullable();
             $table->text('content');
+            $table->integer('views')->default(0);
             $table->enum('post_type', ['NormalPost', 'JobPost']);	
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');

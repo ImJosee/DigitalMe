@@ -7,14 +7,14 @@ function redirectToLogout() {
 }
 
 let profileButtons = document.querySelectorAll('button.profile-button');
-Array.from(profileButtons).forEach(function(element) {
-    element.addEventListener('click', function(event) {
+Array.from(profileButtons).forEach(element => {
+    element.addEventListener('click', event => {
         let button = event.target;
         event.preventDefault();
         if(button.hasAttribute('id')) {
             switch(button.id) {
                 case 'edit-profile-button': {
-                    redirectTo('profile/'+button.dataset.userid+'/edit');
+                    redirectTo('users/'+button.dataset.userid+'/edit');
                     break;
                 }
                 case 'follow-button': {
@@ -23,6 +23,10 @@ Array.from(profileButtons).forEach(function(element) {
                 }
                 case 'login-button': {
                     redirectTo('login');
+                    break;
+                }
+                case 'follows-button': {
+                    redirectTo('follows');
                     break;
                 }
             }

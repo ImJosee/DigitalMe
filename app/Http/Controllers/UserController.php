@@ -40,14 +40,18 @@ class UserController extends Controller
         );
     }
 
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        $user = User::find($id);
+
+        return view('user.editProfile', [
+            'user' => $user
+        ]
+        );
     }
 
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, User $id) {
+    
+        return redirect('/profile');
     }
 
     public function destroy($id)

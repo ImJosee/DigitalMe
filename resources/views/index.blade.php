@@ -37,15 +37,20 @@
         <a href="/posts/{{$post->id}}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
-              <?php $test = 'images/publicacion'.rand(1,12).'.jpg'?>
-              <img src="{{ asset($test) }}" alt="">
+                <?php $test = 'images/publicacion'.rand(1,12).'.jpg'?>
+                <img src="{{ asset($test) }}" alt="">
                 <div class="info-post">
-                    <span class="post-details">
-                    Post: {{$post->id}}.
+                    <span class="post-info-user">
+                        <div class="post-info-user-container">
+                            <a id="post-info-user" href="/profile/{{$post->user->id}}">{{$post->user->getFullName()}}</a>
+                        </div>
                     </span>
-                    <span class="post-details">
-                    Vistas: 0
-                    </span>
+                    <div class="post-info-data">
+                        <span>1</span>
+                        <img id="like-icon" src="{{ asset('images/like-icon.png') }}" alt="">
+                        <span>{{$post->views}}</span>
+                        <img id="view-icon" src="{{ asset('images/view-icon.png') }}" alt="">
+                    </div>
                 </div>
             </div>
         </div>
