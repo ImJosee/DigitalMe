@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/posts', function() {
+    return response()->json(\App\Post::paginate(10));
+});
+
+Route::post('/login', function(Request $request) {
+    return response()->json($request->all());
+});

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://kit.fontawesome.com/2260a42856.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -51,8 +52,8 @@
                 <div class="col-md-4 col-lg-4">
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="/">Descubrir</a>
-                        <a class="nav-item nav-link" href="faq">Ayuda</a>
-                        <a class="nav-item nav-link" href="register">Registro</a>
+                        <a class="nav-item nav-link" href="{{ url('faq') }}">Ayuda</a>
+                        <a class="nav-item nav-link" href="{{ url('register') }}">Registro</a>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4">

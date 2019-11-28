@@ -20,4 +20,11 @@ class Post extends Model {
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function getShortTitle() {
+        if(strlen($this->title) > 30) {
+            return substr($this->title, 0, 30) . "...";
+        }
+        return $this->title;
+    }
+
 }

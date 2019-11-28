@@ -24,13 +24,8 @@ class PostController extends Controller {
 
 
     public function create()
-    {
+    {   
 
-    }
-
-    public function search($query) {
-        $post = Post::where('title', 'LIKE' , '%'.$query.'%')->get();
-        return view('post.showPost', ['post'=>$post]);
     }
 
     public function store(Request $request)

@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="form-group form-check">
-            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+            <input class="form-check-input" type="checkbox" name="remember" id="remember">
             <label class="form-check-label" for="remember">{{ __('Remember Me') }}</label>
             <a class="" href="">¿Contraseña olvidada?</a>
           </div>
@@ -48,4 +48,5 @@
         <a class="facebook" href="www.facebook.com"><img class="logos-login" src="images/facebook.png" alt=""></a>
         </div>
       </div>
+ <script src="{{ asset('js/login.js') }}"> defer</script>     
 @endsection

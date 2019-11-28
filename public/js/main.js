@@ -34,7 +34,7 @@ Array.from(profileButtons).forEach(element => {
     })
 })
 
-let password = document.getElementById('password');
+//let password = document.getElementById('password');
 let passwordConfirm = document.getElementById('password-confirm');
 
 if(password != null && passwordConfirm != null) {
@@ -61,4 +61,5 @@ if(password != null && passwordConfirm != null) {
         }
     })
 }
+
 
