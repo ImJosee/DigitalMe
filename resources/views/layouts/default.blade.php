@@ -59,8 +59,8 @@
                 <div class="col-md-4 col-lg-4">
                     <button id="login-button" type="button" class="profile-button btn btn-primary">Iniciar sesión</button>
                     <p class="o">o</p>
-                    <a href="#"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
-                    <a href="#"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
+                    <a href="{{ route('social.auth', 'google') }}"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
+                    <a href="{{ route('social.auth', 'facebook') }}"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
                     </div>
                     <div class="col-md-4 col-lg-4">
                     <form class="form-inline" action="{{ url('/posts') }}" method="GET">

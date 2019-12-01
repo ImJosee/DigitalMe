@@ -33,5 +33,14 @@ return [
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
     ],
-
+    'facebook' => [
+        'client_id' => '505763956696457',
+        'client_secret' => '77fdb44d1817afd244426d6098578b1e',
+        'redirect' => 'http://localhost:8000/auth/facebook/callback'
+    ],
+    'google' => [ 
+        'client_id' => env ('270968845993-sshbovcue8kg0gt1u0flmlkgva0lflia.apps.googleusercontent.com') , 
+        'client_secret' => env ('DNClAaPNcvC3J56v-9D4UbB_') , 
+        'redirect' => env ('http://localhost:8000/auth/google/callback') 
+    ]
 ];

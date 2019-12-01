@@ -36,7 +36,11 @@ Route::delete('/posts/{id}', 'PostController@destroy');
 
 Route::get('/profile/{id}', 'UserController@show');
 
-Route::post('/follow/{id}', 'FollowersController@store')->middleware('auth');;
+Route::post('/follow/{id}', 'FollowersController@store')->middleware('auth');
+
+Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider')->name('social.auth');
+
+Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
 Auth::routes();
 

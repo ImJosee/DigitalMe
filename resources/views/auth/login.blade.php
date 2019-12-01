@@ -44,8 +44,8 @@
         <h3 class="empresa">¿Deseas utilizar la cuenta de tu empresa o de tu centro educativo?</h3>
         <a href="register">Iniciar sesión con un Enterprise ID</a>
         <h3 class="empresa">O inicia sesión con</h3>
-        <a class="google" href="www.google.com"><img class="logos-login" src="images/busqueda.png" alt=""></a>
-        <a class="facebook" href="www.facebook.com"><img class="logos-login" src="images/facebook.png" alt=""></a>
+        <a class="google" href="{{ route('social.auth', 'google') }}"><img class="logos-login" src="images/busqueda.png" alt=""></a>
+        <a class="facebook" href="{{ route('social.auth', 'facebook') }}"><img class="logos-login" src="images/facebook.png" alt=""></a>
         </div>
       </div>
  <script src="{{ asset('js/login.js') }}"> defer</script>     
