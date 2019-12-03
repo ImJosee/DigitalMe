@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Post;
+use App\NormalUser;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -39,12 +40,16 @@ class User extends Authenticatable
     ];
 
     public function getFullName():String {
-        return $this->name . ' ' . $this->last_name;
+        return $this->name . ' ' . $this->last_name();
     }
 
     /*public function getRouteKeyName() {
         return 'name';
     }*/
+
+    public function last_name() {
+        return $this->getNormalUser != null ? $this->getNormalUser->last_name : '';
+    }
 
     public function getType() {
         return $this->user_type;
@@ -60,5 +65,9 @@ class User extends Authenticatable
 
     public function followers() {
         return $this->belongsToMany(User::class, 'follows', 'user_id', 'follower_id');
+    }
+
+    public function getNormalUser() {
+        return $this->hasOne(NormalUser::class, 'user_id');
     }
 }

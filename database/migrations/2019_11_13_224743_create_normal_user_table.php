@@ -17,8 +17,8 @@ class CreateNormalUserTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('last_name', 100);
-            $table->date('birthday');
-            $table->string('country', 100);
+            $table->date('birthday')->nullable();
+            $table->string('country', 100)->nullable();
             //$table->string('gender');
             //$table->string('langs');
             $table->timestamps();

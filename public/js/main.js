@@ -34,7 +34,7 @@ Array.from(profileButtons).forEach(element => {
     })
 })
 
-//let password = document.getElementById('password');
+let password = document.getElementById('password');
 let passwordConfirm = document.getElementById('password-confirm');
 
 if(password != null && passwordConfirm != null) {
@@ -62,4 +62,16 @@ if(password != null && passwordConfirm != null) {
     })
 }
 
+let emailEdit = document.getElementById('email-edit');
+console.log(emailEdit);
+
+emailEdit.addEventListener('click', event => {
+    event.preventDefault();
+    emailEdit.blur();
+})
+
+emailEdit.addEventListener('mouseover', event => {
+    event.preventDefault();
+    emailEdit.style.cursor = 'not-allowed';
+})
 

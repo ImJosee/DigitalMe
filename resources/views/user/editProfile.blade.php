@@ -11,7 +11,7 @@
         <div class="form-row">
             <div class="col">
                 <label class="labels" for="email">Correo electronico</label>
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email">
+                <input id="email-edit" type="email" readonly class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email">
                 @error('email')
                     <div class="error-email">
                         <strong style="color: red">{{ $message }}</strong>
@@ -31,7 +31,7 @@
             </div>
             <div class="col">
                 <label class="labels" for="last_name">Apellido</label>
-                <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ $user->last_name }}" required autocomplete="last_name" autofocus>
+                <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ $user->getNormalUser->last_name}}" required autocomplete="last_name" autofocus>
                 @error('last_name')
                     <div class="error-last_name">
                         <strong style="color: red">{{ $message }}</strong>
@@ -42,13 +42,13 @@
         <div class="form-row">
             <div class="col">
                 <label class="labels" for="website">Sitio web</label>
-                <input id="website" type="text" placeholder="URL De tu sitio web... "class="form-control" name="website">
+                <input id="website" type="text" value="{{$user->web}}" class="form-control" name="web">
             </div>
         </div>
         <div class="form-row">
             <div class="col">
                 <label class="labels" for="location">Ubicacion</label>
-                <input id="location" type="text" placeholder="Localidad..." class="form-control" name="location">
+                <input id="location" type="text" value="{{$user->location}}" class="form-control" name="location">
             </div>
         </div>
         <div class="form-row">

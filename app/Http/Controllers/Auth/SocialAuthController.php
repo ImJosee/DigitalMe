@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Auth;
 use App\User;
+use App\NormalUser;
 use Socialite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,8 +23,13 @@ class SocialAuthController extends Controller
             return $this->authAndRedirect($user);
         } else {  
             $user = User::create([
-                'name' => $social_user->name,
+                'name' => $social_user->user['given_name'],
                 'email' => $social_user->email,
+            ]);
+
+            NormalUser::create([
+                'user_id' => $user->id,
+                'last_name' => $social_user->user['family_name']
             ]);
 
             return $this->authAndRedirect($user);
