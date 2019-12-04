@@ -92,13 +92,7 @@
                 <a href="/">Contacto</a>
                 </p>
                 <p class="footer-text">
-                <a href="#!">A</a>
-                </p>
-                <p class="footer-text">
-                <a href="#!">B</a>
-                </p>
-                <p class="footer-text">
-                <a href="#!">C</a>
+                <a href="{{ url('/faq') }}">Ayuda</a>
                 </p>
             </div>
             <hr class="w-100 clearfix d-md-none">
@@ -109,12 +103,6 @@
                 </p>
                 <p class="footer-text">
                 <a href="/">Descubrir</a>
-                </p>
-                <p class="footer-text">
-                <a href="{{ url('/faq') }}">Ayuda</a>
-                </p>
-                <p class="footer-text">
-                <a href="/">Empresas</a>
                 </p>
             </div>
             <hr class="w-100 clearfix d-md-none">
