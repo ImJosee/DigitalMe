@@ -36,13 +36,11 @@
           <div class="form-group form-check">
             <input class="form-check-input" type="checkbox" name="remember" id="remember">
             <label class="form-check-label" for="remember">{{ __('Remember Me') }}</label>
-            <a class="" href="">¿Contraseña olvidada?</a>
+            <a class="" href="#">¿Contraseña olvidada?</a>
           </div>
           <button type="submit" class="btn btn-primary btn-login">Iniciar sesión</button>
         </form>
         <h3 class="miembro">¿Todavía no eres miembro? </h3><a class="registrarse" href="/register">Registrarse</a>
-        <h3 class="empresa">¿Deseas utilizar la cuenta de tu empresa o de tu centro educativo?</h3>
-        <a href="register">Iniciar sesión con un Enterprise ID</a>
         <h3 class="empresa">O inicia sesión con</h3>
         <a class="google" href="{{ route('social.auth', 'google') }}"><img class="logos-login" src="images/busqueda.png" alt=""></a>
         <a class="facebook" href="{{ route('social.auth', 'facebook') }}"><img class="logos-login" src="images/facebook.png" alt=""></a>
