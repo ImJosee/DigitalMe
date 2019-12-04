@@ -1,6 +1,6 @@
 @extends('.layouts.default')
 
-@section('title', 'Perfil de {{$user->getFullName()}}')
+@section('title', 'Perfil de '. $user->getFullName())
 
 @section('content')
 
