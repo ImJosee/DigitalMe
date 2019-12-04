@@ -113,9 +113,9 @@
                 <p class="footer-text">
                 <i class="fas fa-envelope mr-3"></i> digitalme@gmail.com</p>
                 <p class="footer-text">
-                <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                <i class="fas fa-phone mr-3"></i> + 011 3580-4040</p>
                 <p class="footer-text">
-                <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                <i class="fas fa-print mr-3"></i> + 011 1029-1023</p>
             </div>
             </div>
             <hr>
