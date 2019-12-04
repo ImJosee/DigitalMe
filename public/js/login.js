@@ -10,7 +10,9 @@ button.addEventListener('click', event => {
     form.append('email', email.value);
     form.append('password', password.value);    
     form.append('_token', document.querySelector('meta[name="csrf-token"]').content)
-
+    let pError = document.getElementById("emailError");
+    console.log(pError);
+    
     fetch('http://localhost:8000/api/login', {
         method: 'POST',
         body: form
@@ -24,6 +26,11 @@ button.addEventListener('click', event => {
         } else {
             password.value = '';
             email.value = '';
+            pError.style.display = 'block';
+            pError.style.color = 'red';
+            pError.innerHTML = "El correo electronico o contrasena son incorrectos."
+            pError.style.margin = '0px';
+            pError.style.marginTop = '10px';
         }
     })
     .catch(error => {
