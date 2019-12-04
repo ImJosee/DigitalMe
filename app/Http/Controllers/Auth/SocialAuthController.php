@@ -22,15 +22,17 @@ class SocialAuthController extends Controller
         if ($user = User::where('email', $social_user->email)->first()) { 
             return $this->authAndRedirect($user);
         } else {  
-            $user = User::create([
-                'name' => $social_user->user['given_name'],
-                'email' => $social_user->email,
-            ]);
-
-            NormalUser::create([
-                'user_id' => $user->id,
-                'last_name' => $social_user->user['family_name']
-            ]);
+            if ($provider == "facebook") {
+                $user = User::create([
+                    'name' => $social_user->name,
+                    'email' => $social_user->email,
+                ]);
+            } else {
+                $user = User::create([
+                    'name' => $social_user->user['given_name'],
+                    'email' => $social_user->email,
+                ]);
+            }
 
             return $this->authAndRedirect($user);
         }
