@@ -22,15 +22,18 @@ class PostController extends Controller {
         return view('index', ['posts'=>$data]);
     }
 
-
-    public function create()
-    {   
-
+    public function create() {   
+        return view('post.createPost');
     }
 
-    public function store(Request $request)
-    {
-        
+    public function store(Request $request) {
+        Post::create([
+            'title' => $request['title'],
+            'subtitle' => $request['subtitle'],
+            'user_id' => auth()->user()->id,
+            'content' => $request['content']
+        ]);
+        return redirect('/profile/'.auth()->user()->id);
     }
 
     public function show($id)

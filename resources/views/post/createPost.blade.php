@@ -7,9 +7,9 @@
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
 
 <div class="container">
-    <form class="register-form" action="#" method="POST" enctype="multipart/form-data">
+    <form class="register-form" action="{{ url('/posts' )}}" method="POST" enctype="multipart/form-data">
         @csrf
-        {{ method_field('PATCH') }}
+        {{ method_field('POST') }}
         <!-- <div class="form-row">
             <div class="col">
                 <label class="labels" for="post_image">Main Image</label>
@@ -30,7 +30,7 @@
         <div class="form-row">
             <div class="col">
                 <label class="labels" for="subtitle">Subtitle</label>
-                <input id="subtitle" type="text" class="form-control @error('subtitle') is-invalid @enderror" subtitle="subtitle" value="" required autocomplete="subtitle" autofocus>
+                <input id="subtitle" type="text" class="form-control @error('subtitle') is-invalid @enderror" name="subtitle" value="" required autocomplete="subtitle" autofocus>
                     @error('subtitle')
                         <div class="error-subtitle">
                             <strong style="color: red">{{ $message }}</strong>
