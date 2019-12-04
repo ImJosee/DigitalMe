@@ -22,5 +22,11 @@ Route::get('/posts', function() {
 });
 
 Route::post('/login', function(Request $request) {
-    return response()->json($request->all());
+    $user = \App\User::where('email', '=', $request['email'])->first();
+    if($user != null) {
+        return [
+            'success' => Hash::check($request['password'], $user->password)
+        ];
+    }
+    return ['success' => false];
 });

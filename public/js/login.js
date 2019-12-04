@@ -16,6 +16,17 @@ button.addEventListener('click', event => {
         body: form
     })
     .then(response => {
-        console.log(response.json());
+        return response.json();
+    })
+    .then(data => {
+        if(data['success'] === true) {
+            document.getElementById("loginForm").submit();
+        } else {
+            password.value = '';
+            email.value = '';
+        }
+    })
+    .catch(error => {
+        console.log(error);
     })
 })

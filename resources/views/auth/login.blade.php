@@ -10,14 +10,14 @@
       <div class="bloque-inicio col-sm-12 col-md-10 col-lg-6 col-xl-4">
         <h2 class="inicia h2Login">Inicia  sesíon para continuar</h2>
         <h1 class="h1Login">DigitalMe</h1>
-        <form action="{{ route('login') }}" method="POST">
+        <form id="loginForm" action="{{ route('login') }}" method="POST">
           @csrf
 
           <div class="form-group row">
             <div class="col-12">
               <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('E-Mail Address') }}" required autocomplete="email" autofocus>
                 @error('email')
-                    <span class="invalid-feedback" role="alert">
+                    <span id="emailError" class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
