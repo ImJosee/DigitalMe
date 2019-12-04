@@ -27,11 +27,20 @@ class SocialAuthController extends Controller
                     'name' => $social_user->name,
                     'email' => $social_user->email,
                 ]);
+
+                NormalUser::create([
+                    'user_id' => $user->id
+                ]);
             } else {
                 $user = User::create([
                     'name' => $social_user->user['given_name'],
                     'email' => $social_user->email,
                 ]);
+
+                NormalUser::create([
+                    'user_id' => $user->id,
+                    'last_name' => $social_user->user['family_name']
+                ]);   
             }
 
             return $this->authAndRedirect($user);
