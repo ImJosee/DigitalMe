@@ -8,6 +8,8 @@ Route::get('/faq', function() {
     return view('faq');
 });
 
+Route::get('/contact', 'ContactController@create')->middleware('auth');
+
 Route::post('/register', 'UserController@create');
 
 Route::get('/posts', 'PostController@index');

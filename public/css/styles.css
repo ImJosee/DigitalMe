@@ -116,14 +116,14 @@ div.post-info-data {
 img#view-icon {
   margin: 0px;
   left: 10px;
-  width: 16px; 
+  width: 16px;
   height: 16px;
 }
 
 img#like-icon {
   margin: 0px;
   left: 10px;
-  width: 12px; 
+  width: 12px;
   height: 12px;
 }
 
@@ -398,7 +398,7 @@ div.div-reg-container {
 }
 
 div.header-container div img {
-  display: none;  
+  display: none;
 }
 
 div.header-container h1 {
@@ -423,6 +423,16 @@ div.header-container h1 {
     padding: 20px;
   }
 }
+
+/**** ACA EMPIEZA EL CSS DEL FORMULARIO ****/
+
+.info-contacto {
+
+    margin-top: 20px;
+
+}
+
+
 /**** ACA EMPIEZA EL CSS DEL FOOTER GENERAL ****/
 
 .footer {
