@@ -34,8 +34,8 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
     'facebook' => [
-        'client_id' => '505763956696457',
-        'client_secret' => '77fdb44d1817afd244426d6098578b1e',
+        'client_id' => '509569862974863',
+        'client_secret' => 'fcc92441aa1a83ac469c4c2148bede3a',
         'redirect' => 'http://localhost:8000/auth/facebook/callback'
     ],
     'google' => [ 

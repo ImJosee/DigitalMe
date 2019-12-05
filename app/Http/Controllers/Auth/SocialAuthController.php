@@ -19,17 +19,20 @@ class SocialAuthController extends Controller
     public function handleProviderCallback($provider)
     {
         $social_user = Socialite::driver($provider)->user(); 
+
         if ($user = User::where('email', $social_user->email)->first()) { 
             return $this->authAndRedirect($user);
         } else {  
             if ($provider == "facebook") {
+                $nameArray = explode(" ", $social_user->name); array_pop($nameArray);
                 $user = User::create([
-                    'name' => $social_user->name,
+                    'name' => join(" ", $nameArray),
                     'email' => $social_user->email,
                 ]);
 
                 NormalUser::create([
-                    'user_id' => $user->id
+                    'user_id' => $user->id,
+                    'last_name' => explode(" ", $social_user->name)[count(explode(" ", $social_user->name)) - 1]
                 ]);
             } else {
                 $user = User::create([
