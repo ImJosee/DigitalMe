@@ -89,7 +89,7 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h6 class="footer-h6 text-uppercase mb-4 font-weight-bold">Soporte</h6>
                 <p class="footer-text">
-                <a href="/">Contacto</a>
+                <a href="{{url('/contact')}}">Contacto</a>
                 </p>
                 <p class="footer-text">
                 <a href="{{ url('/faq') }}">Ayuda</a>
