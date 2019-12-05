@@ -7,15 +7,12 @@
 <main>
     <div class="info-contacto container">
       <form>
-
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Dejanos tu consulta</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-
+            </div>  
         <button type="submit" class="btn btn-primary btn-login">Enviar</button>
-</form>
-
+      </form>
     </div>
 </main>
 
