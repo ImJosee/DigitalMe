@@ -15,10 +15,7 @@
             <a class="abajo linksection" href="index">Lo mejor de digitalMe</a>
         </li>
         <li class="nav-item">
-            <a class="abajo linksection" href="index">Categorias<a>
-        </li>
-        <li class="nav-item">
-            <a class="abajo linksection" href="login">Escuelas y organizaciones</a>
+            <a class="abajo linksection" href="login">Usuarios</a>
         </li>
         </ul>
     </nav>
