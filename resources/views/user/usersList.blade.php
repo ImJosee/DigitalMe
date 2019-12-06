@@ -23,7 +23,7 @@ section>
     </section>
 <main>
     @if(request()->has('search'))
-        @if(count($posts) == 0)
+        @if(count($users) == 0)
         <h2 id="search-results">No se encontraron resultados para: {{request('search')}}</h2>
         @else
         <h2 id="search-results">Resultados para: {{request('search')}} (Total: {{$posts->total()}})</h2>
@@ -35,20 +35,13 @@ section>
         <a href="/profile/{{$user->id}}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
-                <?php $test = 'images/publicacion'.rand(1,12).'.jpg'?>
-                <img src="{{ asset($test) }}" alt="">
+                <img src="{{ asset('images/profile-img') }}" alt="">
                 <div class="info-post">
                     <span class="post-info-user">
                         <div class="post-info-user-container">
-                            <a id="post-info-user" href="/profile/{{$post->user->id}}">{{$post->user->getFullName()}}</a>
+                            <a id="post-info-user" href="/profile/{{$user->$id}}">{{$post->user->getFullName()}}</a>
                         </div>
                     </span>
-                    <div class="post-info-data">
-                        <span>1</span>
-                        <img id="like-icon" src="{{ asset('images/like-icon.png') }}" alt="">
-                        <span>{{$post->views}}</span>
-                        <img id="view-icon" src="{{ asset('images/view-icon.png') }}" alt="">
-                    </div>
                 </div>
             </div>
         </div>
@@ -57,7 +50,7 @@ section>
       </div>
     </div>
     @if(request()->has('search'))
-        {{$posts->appends(request()->all())->links()}}
+        {{$users->appends(request()->all())->links()}}
     @endif
 
 </main>
