@@ -18,7 +18,9 @@ Route::get('/posts/new', 'PostController@create');
 
 Route::post('/posts', 'PostController@store');
 
-Route::get('/profile', 'UserController@index');
+Route::get('/profile', 'UserController@profile')->middleware('auth');
+
+Route::get('/users', 'UserController@index');
 
 Route::get('/follows/{id}', 'FollowersController@show');
 
@@ -36,7 +38,7 @@ Route::patch('/posts/{id}', 'PostController@update');
 
 Route::delete('/posts/{id}', 'PostController@destroy');
 
-Route::get('/profile/{id}', 'UserController@show');
+Route::get('/profile/{id}', 'UserController@show')->middleware('auth');
 
 Route::post('/follow/{id}', 'FollowersController@store')->middleware('auth');
 

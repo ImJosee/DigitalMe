@@ -11,16 +11,28 @@ class UserController extends Controller
 {
 
     public function index(Request $request) {
-        if(Auth::check()) {
-            return redirect()->action('UserController@show', ['id'=>Auth::user()->id]);
+        $users = User::query();
+
+        if($request->has('search')) {
+            $search = $request->get('search');
+            $users->where('name', 'like', '%'.$search.'%');
         }
-        return redirect('/login');
+
+        $data = $users
+            ->orderBy('created_at', 'DESC')
+            ->paginate(12);
+
+        return view('index', ['users'=>$data]);
     }
 
   
     public function create()
     {
         //
+    }
+
+    public function profile() {
+        return redirect()->action('UserController@show', ['id'=>Auth::user()->id]);
     }
 
 
