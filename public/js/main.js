@@ -63,7 +63,6 @@ if(password != null && passwordConfirm != null) {
 }
 
 let emailEdit = document.getElementById('email-edit');
-console.log(emailEdit);
 
 emailEdit.addEventListener('click', event => {
     event.preventDefault();
