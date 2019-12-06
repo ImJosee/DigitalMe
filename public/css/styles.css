@@ -179,15 +179,21 @@ h2#search-results {
 }
 
 a#user-info-anchor {
+  display: block;
   text-align: center;
 }
 
+div.info-user {
+  margin-top: 20px;
+}
+
 img#profile-user-list {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  margin-top: 30px;
-  justify-content:center;
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 /**** ACA EMPIEZA EL CSS DEL LOGIN ****/

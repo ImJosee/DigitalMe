@@ -40,7 +40,7 @@
                         <a id="user-info-anchor" href="/profile/">{{$user->getFullName()}}</a>
                     </span>
                 </div>
-            </div>
+            </div>  
         </div>
       @endforeach
       </div>
