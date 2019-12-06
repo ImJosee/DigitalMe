@@ -4,7 +4,7 @@
 
 @section('content')
 
-section>
+<section>
     <div class="descripcion">
         <h2 class="date">Date a conocer.</h2>
     </div>
@@ -32,6 +32,7 @@ section>
     <div class="publicaciones container justify-content-center">
       <div class="row justify-content-center">
       @foreach($users as $user)
+      {{dd($user)}}
         <a href="/profile/{{$user->id}}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
