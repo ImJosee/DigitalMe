@@ -13,7 +13,7 @@ button.addEventListener('click', event => {
     let pError = document.getElementById("emailError");
     console.log(pError);
     
-    fetch('http://localhost:8000/api/login', {
+    fetch('http://digitalmee.dhalumnos.com/api/login', {
         method: 'POST',
         body: form
     })
