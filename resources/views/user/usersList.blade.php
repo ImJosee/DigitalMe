@@ -26,7 +26,7 @@ section>
         @if(count($users) == 0)
         <h2 id="search-results">No se encontraron resultados para: {{request('search')}}</h2>
         @else
-        <h2 id="search-results">Resultados para: {{request('search')}} (Total: {{$posts->total()}})</h2>
+        <h2 id="search-results">Resultados para: {{request('search')}} (Total: {{$users->total()}})</h2>
         @endif
     @endif
     <div class="publicaciones container justify-content-center">
@@ -39,7 +39,7 @@ section>
                 <div class="info-post">
                     <span class="post-info-user">
                         <div class="post-info-user-container">
-                            <a id="post-info-user" href="/profile/{{$user->$id}}">{{$post->user->getFullName()}}</a>
+                            <a id="post-info-user" href="/profile/{{$user->$id}}">{{$user->getFullName()}}</a>
                         </div>
                     </span>
                 </div>
