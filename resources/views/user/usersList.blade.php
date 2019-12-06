@@ -35,8 +35,8 @@
         <a href="/profile/">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
-                <img src="{{ asset('images/profile-img.jpg') }}" alt="">
                 <div class="info-post">
+                    <img src="{{ asset('images/profile-img.jpg') }}" alt="">
                     <span class="post-info-user">
                         <div class="post-info-user-container">
                             <a id="user-info-anchor" href="/profile/">{{$user->getFullName()}}</a>
