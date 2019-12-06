@@ -35,11 +35,11 @@
         <a href="/profile/">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
-                <img src="{{ asset('images/profile-img') }}" alt="">
+                <img src="{{ asset('images/profile-img.jpg') }}" alt="">
                 <div class="info-post">
                     <span class="post-info-user">
                         <div class="post-info-user-container">
-                            <a id="post-info-user" href="/profile/">{{$user->getFullName()}}</a>
+                            <a id="user-info-anchor" href="/profile/">{{$user->getFullName()}}</a>
                         </div>
                     </span>
                 </div>
