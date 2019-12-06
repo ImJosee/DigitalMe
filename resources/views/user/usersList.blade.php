@@ -32,15 +32,14 @@
     <div class="publicaciones container justify-content-center">
       <div class="row justify-content-center">
       @foreach($users as $user)
-      {{dd($user)}}
-        <a href="/profile/{{$user->id}}">
+        <a href="/profile/">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
                 <img src="{{ asset('images/profile-img') }}" alt="">
                 <div class="info-post">
                     <span class="post-info-user">
                         <div class="post-info-user-container">
-                            <a id="post-info-user" href="/profile/{{$user->$id}}">{{$user->getFullName()}}</a>
+                            <a id="post-info-user" href="/profile/">{{$user->getFullName()}}</a>
                         </div>
                     </span>
                 </div>
