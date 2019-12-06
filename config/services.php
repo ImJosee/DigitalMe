@@ -36,11 +36,11 @@ return [
     'facebook' => [
         'client_id' => '509569862974863',
         'client_secret' => 'fcc92441aa1a83ac469c4c2148bede3a',
-        'redirect' => 'http://localhost:8000/auth/facebook/callback'
+        'redirect' => 'http://digitalmee.dhalumnos.com/auth/facebook/callback'
     ],
     'google' => [ 
         'client_id' => '270968845993-sshbovcue8kg0gt1u0flmlkgva0lflia.apps.googleusercontent.com', 
         'client_secret' => 'DNClAaPNcvC3J56v-9D4UbB_', 
-        'redirect' => 'http://localhost:8000/auth/google/callback'
+        'redirect' => 'http://digitalmee.dhalumnos.com/auth/google/callback'
     ]
 ];
