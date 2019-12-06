@@ -22,7 +22,7 @@ class UserController extends Controller
             ->orderBy('created_at', 'DESC')
             ->paginate(12);
 
-        return view('usersList', ['users'=>$data]);
+        return view('user.usersList', ['users'=>$data]);
     }
 
   
