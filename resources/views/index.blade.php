@@ -15,7 +15,7 @@
             <a class="abajo linksection" href="index">Lo mejor de digitalMe</a>
         </li>
         <li class="nav-item">
-            <a class="abajo linksection" href="login">Usuarios</a>
+        <a class="abajo linksection" href="{{ asset('/users') }}">Usuarios</a>
         </li>
         </ul>
     </nav>
