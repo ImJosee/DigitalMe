@@ -26,5 +26,13 @@ class Post extends Model {
         }
         return $this->title;
     }
+ 
+    public function likes() {
+        return $this->belongsToMany(User::class, 'like_user', 'post_id', 'user_id');
+    }
+
+    public function views() {
+        return $this->belongsToMany(User::class, 'view_user', 'post_id', 'user_id');
+    }
 
 }

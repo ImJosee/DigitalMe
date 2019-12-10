@@ -196,6 +196,36 @@ img#profile-user-list {
   margin: 0 auto;
 }
 
+a#user-info-anchor {
+  color: #000;
+}
+div.post-title-container {
+  margin-top: 10px;
+  width: 100%;
+}
+div.post-title-container h2#post-title {
+  display: block;
+  font-size: 3em;
+  color: black;
+  text-align: center;
+}
+
+div.post-subtitle-container {
+  margin-top: 10px;
+  width: 100%;
+}
+div.post-subtitle-container h3#post-subtitle {
+  display: block;
+  font-size: 2em;
+  color: black;
+  text-align: center;
+}
+
+div.detalle-post {
+  width: 100%;
+  text-align: center;
+}
+
 /**** ACA EMPIEZA EL CSS DEL LOGIN ****/
 
 .bloque-inicio {

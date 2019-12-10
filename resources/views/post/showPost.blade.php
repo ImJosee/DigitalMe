@@ -5,6 +5,21 @@
 @section('content')
 <main>
     <div class="publicaciones container-fluid flex">
+        <div class="post-title-container">
+            <h2 id="post-title">
+            {{ $post->title }}
+            </h2>
+        </div>
+        <div class="post-subtitle-container">
+            <h3 id="post-subtitle">
+            {{ $post->subtitle }}
+            </h3>
+        </div>
+        <div class="post-content-container">
+            <h3 id="post-content">
+            {{ $post->content }}
+            </h3>
+        </div>
         <div class="row">
             <div class="publicacion">
                 <a href="/posts/{{$post->id}}">
@@ -12,10 +27,8 @@
                 </a>
             </div>
         <div class="detalle-post">
-            Title: {{ $post->title }}.<br/>
-            Subtitle: {{$post->subtitle}}.<br />
-            Views: {{$post->views}}.<br />
-            Created at: {{$post->created_at}}.<br />
+            Visitas: {{count($post->views()->getResults())}}
+            Likes: {{count($post->likes()->getResults())}}
         </div>
     </div>
 </main>
