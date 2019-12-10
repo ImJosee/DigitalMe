@@ -22,7 +22,7 @@ Route::get('/posts', function() {
 });
 
 Route::post('/questions', function(Request $req) {
-    $question = \App\Question::where('question', 'like', '%'.$request['question'].'%')->first();
+    $question = \App\Question::where('question', 'like', '%'.$req['question'].'%')->first();
     if($question != null) {
         return [
             'success' => true,

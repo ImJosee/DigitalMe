@@ -20,17 +20,17 @@ if(document.querySelectorAll('a.question') != null) {
 
     Array.from(questions).forEach(question => {
         question.addEventListener('click', event => {
-            form.append('question', question.value)
             event.preventDefault()
-            fetch(window.location.protocol+'//'+window.location.host+'/'+'api/questions', {
+            form.append('question', 'Quienes somos')
+            fetch(window.location.protocol+'//'+window.location.host+'/api/questions', {
                 method: 'POST',
                 body: form
             })
             .then(response => {
-                console.log(response);
+                return response.json();
             })
             .then(data => {
-                console.log(data);
+                question.innerHTML = data.question.answer
             })
             .catch(exception => {
                 console.log(exception);
