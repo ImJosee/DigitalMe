@@ -50,19 +50,12 @@
         <nav class="section-na navbar navbar-expand-lg navbar-light bg-light justify-content-center section-na-perfil">
             <ul class="navbar-nav">
             <li class="nav-item navItemPerfil">
-                <a class="abajo linksection" href="perfil.php">Información</a>
+                <a class="abajo linksection" href="#posts">Trabajos subidos a digitalme</a>
             </li>
-            <li class="nav-item navItemPerfil">
-                <a class="abajo linksection" href="perfil.php">Trabajo<a>
-            </li>
-            <li class="nav-item navItemPerfil">
-                <a class="abajo linksection" href="perfil.php">Apreciaciones</a>
-            </li>
-            </ul>
         </nav>
     </section>
     <section class="portfolio_thumbnails">
-        <div class="publicaciones-perfil container">
+        <div id="posts" class="publicaciones-perfil container">
             <div class="row">
             @if($userPosts->count() > 0)
                 @foreach($userPosts as $post) 
