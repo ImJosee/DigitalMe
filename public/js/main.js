@@ -14,6 +14,25 @@ lupa.addEventListener('click', event => {
     searchForm.submit();
 })
 
+if(document.querySelectorAll('a.question') != null) {
+    let questions = document.querySelectorAll('a.question')
+    let form = new FormData
+
+    Array.from(questions).forEach(question => {
+        question.addEventListener('click', event => {
+            form.append('question', question.value)
+            event.preventDefault()
+            fetch(window.location.protocol+'//'+window.location.host+'/'+'api/questions', {
+                method: 'POST',
+                body: form
+            })
+            .then(response => {
+                return response.json();
+            })
+        })
+    })
+}
+
 let profileButtons = document.querySelectorAll('button.profile-button');
 Array.from(profileButtons).forEach(element => {
     element.addEventListener('click', event => {

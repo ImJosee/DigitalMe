@@ -21,6 +21,10 @@ Route::get('/posts', function() {
     return response()->json(\App\Post::paginate(10));
 });
 
+Route::post('/questions', function(Request $req) {
+
+});
+
 Route::post('/login', function(Request $request) {
     $user = \App\User::where('email', '=', $request['email'])->first();
     if($user != null) {
