@@ -27,7 +27,13 @@ if(document.querySelectorAll('a.question') != null) {
                 body: form
             })
             .then(response => {
-                return response.json();
+                console.log(response);
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(exception => {
+                console.log(exception);
             })
         })
     })
