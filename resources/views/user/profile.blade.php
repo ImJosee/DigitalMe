@@ -7,7 +7,11 @@
 <section class="general-content">
       <section class="move_left_desktop">
         <div class="descripcion-perfil">
-          <img src="{{ asset('images/profile-img.jpg') }}" class="profile-image" alt="profile image">
+          @if($user->profile_image != null) 
+            <img src="/storage/{{$user->profile_image}}" class="profile-image" alt="profile image">
+          @else
+            <img src="{{ asset('images/profile-img.jpg') }}" class="profile-image" alt="profile image">
+          @endif
             <ul class="avatar-info" id="nav">
               <h3 class="h3-perfil">{{$user->getFullName()}}</h3>
               <li> <a href="">{{ $user->web ?? ''}}</a> </li>

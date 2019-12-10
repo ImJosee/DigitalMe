@@ -66,6 +66,13 @@ class UserController extends Controller
         $id->getNormalUser->last_name = $request['last_name'];
         $id->web = $request['web'];
         $id->location = $request['location'];
+        
+        if($request->file('profile-image') != null) {
+            $route = $request->file('profile-image')->store('public');
+            $name = basename($route);
+            $id->profile_image = $name;
+        }
+    
         $id->save();
         $id->getNormalUser->save();
         return redirect('/profile');

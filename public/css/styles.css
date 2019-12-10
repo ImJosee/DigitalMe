@@ -1,5 +1,5 @@
-  body {
-    font-family: montserrat;
+body {
+  font-family: montserrat;
 }
 
 /** ACA EMPIEZA EL CSS DEL HEADER**/
@@ -26,7 +26,7 @@
     margin: 5px;
 }
 
-.btn {
+.boton-custom {
     border-radius: 50px;
     font-size: 14px;
     background: linear-gradient(90deg, rgba(2,31,158,1) 0%, rgba(0,206,255,1) 100%);

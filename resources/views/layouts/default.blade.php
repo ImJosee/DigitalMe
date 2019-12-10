@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
-                    <button onclick="document.getElementById('logout-form').submit()" type="button" class="btn btn-primary">Cerrar sesion</button>
+                    <button onclick="document.getElementById('logout-form').submit()" type="button" class="btn btn-primary boton-custom">Cerrar sesion</button>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4">
-                    <button id="login-button" type="button" class="profile-button btn btn-primary">Iniciar sesión</button>
+                    <button id="login-button" type="button" class="profile-button btn btn-primary boton-custom ">Iniciar sesión</button>
                     <p class="o">o</p>
                     <a href="{{ route('social.auth', 'google') }}"><img class="logos" src="{{ asset('images/busqueda.png') }}" alt=""></a>
                     <a href="{{ route('social.auth', 'facebook') }}"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>

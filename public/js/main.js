@@ -62,15 +62,18 @@ if(password != null && passwordConfirm != null) {
     })
 }
 
-let emailEdit = document.getElementById('email-edit');
+try {
+    let emailEdit = document.getElementById('email-edit');
 
-emailEdit.addEventListener('click', event => {
-    event.preventDefault();
-    emailEdit.blur();
-})
+    emailEdit.addEventListener('click', event => {
+        event.preventDefault();
+        emailEdit.blur();
+    })
 
-emailEdit.addEventListener('mouseover', event => {
-    event.preventDefault();
-    emailEdit.style.cursor = 'not-allowed';
-})
+    emailEdit.addEventListener('mouseover', event => {
+        event.preventDefault();
+        emailEdit.style.cursor = 'not-allowed';
+    })
+} catch(ex) {
 
+}

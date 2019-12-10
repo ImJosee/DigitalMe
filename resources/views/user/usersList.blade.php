@@ -35,7 +35,11 @@
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="publicacion">
                 <div class="info-user">
-                    <a href="/profile/{{$user->id}}"><img id="profile-user-list" src="{{ asset('images/profile-img.jpg') }}" alt=""></a>
+                    @if($user->profile_image != null) 
+                        <a href="/profile/{{$user->id}}"><img id="profile-user-list" src="/storage/{{$user->profile_image}}" alt=""></a>
+                    @else
+                        <a href="/profile/{{$user->id}}"><img id="profile-user-list" src="{{ asset('images/profile-img.jpg') }}" alt=""></a>
+                    @endif
                     <span class="post-info-user">
                         <a id="user-info-anchor" href="/profile/{{$user->id}}">{{$user->getFullName()}}</a>
                     </span>
