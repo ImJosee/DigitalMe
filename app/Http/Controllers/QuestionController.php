@@ -13,13 +13,13 @@ class QuestionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        $question = Question::query();
+        $questions = Question::query();
 
         if($request->has('search')) {
             $search = $request->get('search');
-            $question->where('question', 'like', '%'.$search.'%');
+            $questions->where('question', 'like', '%'.$search.'%');
         }
-        $data = Question::where('question', 'like', '%e%')->paginate(6);
+        $data = $questions->paginate(6);
 
         return view('faq', ['questions' => $data]);
     }
