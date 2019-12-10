@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Question;
 
 class QuestionController extends Controller
 {
@@ -11,9 +12,16 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Request $request) {
+        $question = Question::query();
+
+        if($request->has('search')) {
+            $search = $request->get('search');
+            $question->where('question', 'like', '%'.$search.'%');
+        }
+        $data = Question::where('question', 'like', '%e%')->paginate(6);
+
+        return view('faq', ['questions' => $data]);
     }
 
     /**

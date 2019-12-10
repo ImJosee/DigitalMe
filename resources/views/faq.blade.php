@@ -7,7 +7,7 @@
 <main>
     <section class="section hero">
         <div class="hero-inner">
-            <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="#" method="#"><input type="search" name="query" id="query" placeholder="Buscar..." autocomplete="off"/></form>
+            <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="{{ url(request()->getUri()) }}" method="GET"><input type="search" name="search" id="query" placeholder="Buscar..." autocomplete="off"/></form>
         </div>
     </section>
     <div class="container">
@@ -19,20 +19,13 @@
                 </h3>
             </div>
             <ul class="blocks-list">
+            @foreach($questions as $question)
                 <li class="blocks-item">
                 <a href='#' class="blocks-item-link question">
-                    ¿Quienes somos? 
+                    {{$question->question}}
                 </a>
                 </li>
-                <li class="blocks-item">
-                <a href='#' class="blocks-item-link question">
-                    ¿Como me registro?
-                </a>
-                </li>
-                <li class="blocks-item">
-                <a href='#' class="blocks-item-link question">
-                    ¿Como inicio sesion?
-                </a>
+            @endforeach
             </ul>
         </section>
         </section>

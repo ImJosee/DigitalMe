@@ -4,9 +4,7 @@ Route::get('/', 'PostController@index');
 
 Route::get('/index', 'PostController@index');
 
-Route::get('/faq', function() {
-    return view('faq');
-});
+Route::get('/faq', 'QuestionController@index');
 
 Route::get('/contact', 'ContactController@create')->middleware('auth');
 
