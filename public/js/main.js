@@ -20,8 +20,8 @@ if(document.querySelectorAll('a.question') != null) {
 
     Array.from(questions).forEach(question => {
         question.addEventListener('click', event => {
-            event.preventDefault()
-            form.append('question', 'Quienes somos')
+            event.preventDefault()            
+            form.append('question', question.innerHTML);
             fetch(window.location.protocol+'//'+window.location.host+'/api/questions', {
                 method: 'POST',
                 body: form

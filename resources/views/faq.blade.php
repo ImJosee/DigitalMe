@@ -21,20 +21,17 @@
             <ul class="blocks-list">
                 <li class="blocks-item">
                 <a href='#' class="blocks-item-link question">
-                    <h4 class="blocks-item-title">¿Quienes somos? </h4>
-                    <p class="blocks-item-description"></p>
+                    ¿Quienes somos? 
                 </a>
                 </li>
                 <li class="blocks-item">
                 <a href='#' class="blocks-item-link question">
-                    <h4 class="blocks-item-title">Registro, Login, Configuración de cuenta</h4>
-                    <p class="blocks-item-description"></p>
+                    ¿Como me registro?
                 </a>
                 </li>
                 <li class="blocks-item">
                 <a href='#' class="blocks-item-link question">
-                    <h4 class="blocks-item-title">Crear, editar y publicar contenido</h4>
-                    <p class="blocks-item-description"></p>
+                    ¿Como inicio sesion?
                 </a>
             </ul>
         </section>
