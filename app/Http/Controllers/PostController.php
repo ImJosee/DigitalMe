@@ -31,7 +31,8 @@ class PostController extends Controller {
             'title' => $request['title'],
             'subtitle' => $request['subtitle'],
             'user_id' => auth()->user()->id,
-            'content' => $request['content']
+            'content' => $request['content'],
+            'image' => basename($request->file('post_image')->store('public'))
         ]);
         return redirect('/profile/'.auth()->user()->id);
     }

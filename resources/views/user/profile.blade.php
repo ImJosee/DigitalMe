@@ -63,7 +63,11 @@
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="publicacion">
                             <?php $test = 'images/publicacion'.rand(1,12).'.jpg'?>
-                            <img src="{{ asset($test) }}" alt="">
+                            @if($post->image != null) 
+                                <img src="/storage/{{$user->profile_image}}" alt="">
+                            @else
+                                <img src="{{ asset($test) }}" alt="">
+                            @endif
                             <div class="info-post">
                                 <span class="post-info-user">
                                     <div class="post-info-user-container">

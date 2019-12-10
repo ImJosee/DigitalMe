@@ -10,15 +10,15 @@
     <form class="register-form" action="{{ url('/posts' )}}" method="POST" enctype="multipart/form-data">
         @csrf
         {{ method_field('POST') }}
-        <!-- <div class="form-row">
-            <div class="col">
-                <label class="labels" for="post_image">Main Image</label>
-                <input id="post_image" type="file" class="form-control" name="post_image">
-            </div>
-        </div> -->
         <div class="form-row">
             <div class="col">
-                <label class="labels" for="title">Title</label>
+                <label class="labels" for="post_image">Imagen Principal</label>
+                <input id="post_image" type="file" class="form-control" required name="post_image">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <label class="labels" for="title">Titulo</label>
                 <input id="title-edit" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="" required autocomplete="title">
                 @error('title')
                     <div class="error-title">
@@ -26,10 +26,8 @@
                     </div>   
                 @enderror
             </div>
-        </div>
-        <div class="form-row">
             <div class="col">
-                <label class="labels" for="subtitle">Subtitle</label>
+                <label class="labels" for="subtitle">Subtitulo</label>
                 <input id="subtitle" type="text" class="form-control @error('subtitle') is-invalid @enderror" name="subtitle" value="" required autocomplete="subtitle" autofocus>
                     @error('subtitle')
                         <div class="error-subtitle">
@@ -38,10 +36,11 @@
                     @enderror
             </div>
         </div>
+    
         <div class="form-row">
             <div class="col">
-                <label class="labels" for="content">Content</label>
-                <textarea class="form-control summernote" name="content"></textarea>
+                <label class="labels" for="content">Contenido</label>
+                <textarea required class="form-control summernote" name="content"></textarea>
                 @error('content')
                     <div class="error-content">
                         <strong style="color: red">{{ $message }}</strong>
