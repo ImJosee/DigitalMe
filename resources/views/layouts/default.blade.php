@@ -33,7 +33,6 @@
                         <a class="nav-item nav-link" href="{{ url('/faq') }}">Ayuda</a>
                         <a class="nav-item nav-link" href="{{ url('/profile') }}">Mi perfil</a>
                         <a class="nav-item nav-link" href="{{ url('/posts/new') }}">Nuevo post</a>
-                        <a class="nav-item nav-link" href="{{ url('/posts') }}">Vacantes</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3">
@@ -43,7 +42,7 @@
                     </form>
                 </div>
                 <div class="col-md-3 col-lg-3">
-                    <form class="form-inline" action="{{ url(request()->getUri()) }}" method="GET">
+                    <form class="form-inline search-form" action="{{ url(request()->getUri()) }}" method="GET">
                         <input class="form-control-search mr-sm-2" name="search" type="search" placeholder="Search..." aria-label="Search">
                         <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
                     </form>
@@ -63,7 +62,7 @@
                     <a href="{{ route('social.auth', 'facebook') }}"><img class="logos" src="{{ asset('images/facebook.png') }}" alt=""></a>
                     </div>
                     <div class="col-md-4 col-lg-4">
-                    <form class="form-inline" action="{{ url(request()->getUri()) }}" method="GET">
+                    <form class="form-inline search-form" action="{{ url(request()->getUri()) }}" method="GET">
                     <input class="form-control-search mr-sm-2" name="search" type="search" placeholder="Search..." aria-label="Search">
                     <a class="lupa" href="#"><ion-icon name="search"></ion-icon></a>
                     </form>

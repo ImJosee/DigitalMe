@@ -6,6 +6,14 @@ function redirectToLogout() {
     window.location.href = 'logout';
 }
 
+let lupa = document.querySelector('a.lupa');
+let searchForm = document.querySelector('form.search-form');
+
+lupa.addEventListener('click', event => {        
+    event.preventDefault()
+    searchForm.submit();
+})
+
 let profileButtons = document.querySelectorAll('button.profile-button');
 Array.from(profileButtons).forEach(element => {
     element.addEventListener('click', event => {
