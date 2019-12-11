@@ -11,8 +11,19 @@
             </a>
         </div>
         <div class="detalle-post">
-            Visitas: {{count($post->getViews()->getResults())}}
-            Likes: {{count($post->likes()->getResults())}}
+            <span>{{count($post->likes()->getResults())}}</span>
+            <form id="like-form" style="display: inline"action="/posts/{{$post->id}}/like" method="POST">
+                @csrf
+                <a id="like-click" href="">
+                    @if(Auth::check() && auth()->user()->likes->contains('id', $post->id))
+                        <img id="like-icon" src="{{ asset('images/like.png') }}" alt="">                    
+                    @else
+                        <img id="like-icon" src="{{ asset('images/heart.png') }}" alt="">
+                    @endif
+                </a>
+            </form>
+            <span>{{count($post->getViews()->getResults())}}</span>
+            <img id="view-icon" src="{{ asset('images/view-icon.png') }}" alt="">
         </div>  
         <div class="post-title-container">
             <h2 id="post-title">

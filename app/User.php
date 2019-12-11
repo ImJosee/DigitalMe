@@ -70,4 +70,8 @@ class User extends Authenticatable
     public function getNormalUser() {
         return $this->hasOne(NormalUser::class, 'user_id');
     }
+
+    public function likes() {
+        return $this->belongsToMany(Post::class, 'like_user', 'user_id', 'post_id');
+    }
 }

@@ -32,6 +32,8 @@ Route::get('/posts/{id}', 'PostController@show');
 
 Route::get('/posts/{id}/edit', 'PostController@edit')->middleware('user.verifyid');
 
+Route::post('/posts/{id}/like', 'PostController@like')->middleware('auth');
+
 Route::patch('/posts/{id}', 'PostController@update');
 
 Route::delete('/posts/{id}', 'PostController@destroy');

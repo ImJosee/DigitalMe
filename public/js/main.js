@@ -100,6 +100,15 @@ if(password != null && passwordConfirm != null) {
     })
 }
 
+if(document.querySelector('a#like-click')) {
+    let like = document.querySelector('a#like-click')
+    let likeForm = document.querySelector('form#like-form')
+    like.addEventListener('click', event => {
+        event.preventDefault()
+        likeForm.submit()
+    })
+}
+
 try {
     let emailEdit = document.getElementById('email-edit');
 

@@ -75,4 +75,9 @@ class PostController extends Controller {
         $id->forceDelete();
         return redirect()->action('UserController@show', ['id' => auth()->user()->id]);
     }
+
+    public function like(Post $id) {
+        auth()->user()->likes()->toggle($id->id);
+        return redirect()->action('PostController@show', ['id' => $id->id]);
+    }
 }
