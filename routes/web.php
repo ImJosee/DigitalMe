@@ -24,6 +24,8 @@ Route::get('/follows/{id}', 'FollowersController@showFollows');
 
 Route::get('/follows', 'UserController@follows')->middleware('auth');
 
+Route::get('/followers', 'UserController@followers')->middleware('auth');
+
 Route::get('/followers/{id}', 'FollowersController@showFollowers');
 
 Route::get('/users/{id}/edit', 'UserController@edit')->middleware('auth')->middleware('user.verifyid');

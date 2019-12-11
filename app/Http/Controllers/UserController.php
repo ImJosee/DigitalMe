@@ -39,6 +39,10 @@ class UserController extends Controller
         return redirect()->action('FollowersController@showFollows', ['user'=>auth()->user()]);
     }
 
+    public function followers() {
+        return redirect()->action('FollowersController@showFollowers', ['user'=>auth()->user()]);
+    }
+
 
     public function store(Request $request)
     {

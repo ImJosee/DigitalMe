@@ -46,7 +46,7 @@ class FollowersController extends Controller
     }
 
     public function showFollows(User $id) {
-        return view('user.follows', ['user'=>$id]);
+        return view('user.followers', ['user'=>$id]);
     }
 
     /**
