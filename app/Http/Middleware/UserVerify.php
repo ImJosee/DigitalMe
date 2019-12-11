@@ -22,7 +22,7 @@ class UserVerify
             }
             return $next($request); 
         }
-        if(!Auth::check() || auth()->user()->id != $id) {
+        if(!Auth::check() || auth()->user()->id != $pathArray[2]) {
             return redirect('/');
         }
         return $next($request);

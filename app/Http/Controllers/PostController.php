@@ -57,9 +57,18 @@ class PostController extends Controller {
     }
 
 
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, Post $id) {
+        $id->title = $request['title'];
+        $id->subtitle = $request['subtitle'];
+        $id->content = $request['content'];
+        
+        if($request->file('post_image') != null) {
+            $route = $request->file('post_image')->store('public');
+            $name = basename($route);
+            $id->image = $name;
+        }
+        $id->save();
+        return redirect('/profile');
     }
 
     public function destroy(Post $id) {
