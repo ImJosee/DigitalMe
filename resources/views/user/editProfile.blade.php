@@ -47,6 +47,12 @@
         </div>
         <div class="form-row">
             <div class="col">
+                <label class="labels" for="website">Nacionalidad</label>
+                <input id="country" type="text" value="{{$user->getNormalUser->country}}" class="form-control" name="country">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
                 <label class="labels" for="location">Ubicacion</label>
                 <input id="location" type="text" value="{{$user->location}}" class="form-control" name="location">
             </div>

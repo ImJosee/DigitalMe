@@ -68,6 +68,7 @@ class UserController extends Controller
     public function update(Request $request, User $id) {
         $id->name = $request['name'];
         $id->getNormalUser->last_name = $request['last_name'];
+        $id->getNormalUser->country = $request['country'];
         $id->web = $request['web'];
         $id->location = $request['location'];
         

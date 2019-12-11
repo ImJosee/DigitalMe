@@ -15,7 +15,7 @@
             <ul class="avatar-info" id="nav">
               <h3 class="h3-perfil">{{$user->getFullName()}}</h3>
               <li> <a href="">{{ $user->web ?? ''}}</a> </li>
-              <li> <a href=""><img src="{{ asset('images/location.svg') }}" class="location-icon" alt="location icon">{{$user->location ?? 'Ubicacion desconocida'}}</a> </li>
+              <li> <a href=""><img src="{{ asset('images/location.svg') }}" class="location-icon" alt="location icon">{{ ($user->location != null ? $user->getNormalUser->country . ', ' . $user->location: 'Ubicacion desconocida') }}</a> </li>
               <li><a href="/followers/{{$user->id}}">Seguidores: {{count($user->followers()->getResults())}}</a></li>
             </ul>
         </div>
