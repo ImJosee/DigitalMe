@@ -70,51 +70,6 @@
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                 </div>
-                <p class="subtitle">{{ __('Birthday') }}</p>
-                <div class="form-row">
-                    <div class="col">
-                        <label class="labels mr-sm-2" for="birthdayMonth">{{ __('Month') }}</label>
-                        <select name="birthdayMonth" class="custom-select" id="birthdayMonth">
-                            <option value="" selected disabled>Please Select</option>
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label class="labels" for="birthdayDay">{{ __('Day') }}</label>
-                        <input type="text" class="form-control" name="birthdayDay" id="birthdayDay" value="{{ old('birthdayDay') }}" required>
-                        @error('birthdayDay')
-                            <div class="error-password">
-                                <strong style="color: red">{{ $message }}</strong>
-                            </div>
-                        @enderror
-                    </div>
-                    <div class="col">
-                        <label class="labels" for="birthdayYear">{{ __('Year') }}</label>
-                        <input type="text" class="form-control" name="birthdayYear" id="birthdayYear" value="{{ old('birthdayYear') }}" required>
-                        @error('birthdayYear')
-                            <div class="error-password">
-                                <strong style="color: red">{{ $message }}</strong>
-                            </div>
-                        @enderror
-                    </div>
-                    
-                    @error('birthday')
-                        <div class="error-birthday">
-                            <strong style="color: red">{{ $message }}</strong>
-                        </div>    
-                    @enderror
-                </div>
                 <div class="form-row">
                     <div class="col">
                     <label class="labels mr-sm-2" for="country">{{ __('Country') }}</label>

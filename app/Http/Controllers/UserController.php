@@ -36,7 +36,7 @@ class UserController extends Controller
     }
 
     public function follows() {
-        return redirect()->action('FollowersController@follows', ['user'=>auth()->user()]);
+        return redirect()->action('FollowersController@showFollows', ['user'=>auth()->user()]);
     }
 
 

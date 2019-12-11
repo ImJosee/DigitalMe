@@ -54,8 +54,6 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'last_name' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'birthdayDay' => ['numeric', 'required'],
-            'birthdayYear' => ['numeric', 'required']
         ]);
     }
 
@@ -73,7 +71,8 @@ class RegisterController extends Controller
         ]);
         NormalUser::create([
             'user_id' => $user->id,
-            'last_name' => $data['last_name']
+            'last_name' => $data['last_name'],
+            'country' => $data['country'],
         ]);
         return $user;
     }
