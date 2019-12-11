@@ -46,9 +46,4 @@ Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProvider
 
 Auth::routes();
 
-Route::get('/init', function() {
-    Artisan::call('storage:link');
-    return 'ready!';
-});
-
 Route::get('/home', 'HomeController@index')->name('home');
