@@ -41,8 +41,12 @@ class FollowersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $id) {
+    public function showFollowers(User $id) {
         return view('user.followers', ['user'=>$id]);
+    }
+
+    public function showFollows(User $id) {
+        return view('user.follows', ['user'=>$id]);
     }
 
     /**

@@ -201,6 +201,28 @@ a#user-info-anchor {
   color: #000;
 }
 
+p.profile-text {
+  text-align: center;
+}
+
+h5.profile-name {
+  text-align: center;
+}
+
+div#profile-card-container {
+  margin-top: 25px;
+}
+
+a.profile-btn {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+div.main-profile-container {
+  width: 100%;
+}
+
 /**** ACA EMPIEZA EL CSS DEL LOGIN ****/
 
 .bloque-inicio {

@@ -20,9 +20,11 @@ Route::get('/profile', 'UserController@profile')->middleware('auth');
 
 Route::get('/users', 'UserController@index');
 
-Route::get('/follows/{id}', 'FollowersController@show');
+Route::get('/follows/{id}', 'FollowersController@showFollows');
 
-Route::get('/followers/{id}', 'FollowersController@show');
+Route::get('/follows', 'UserController@follows')->middleware('auth');
+
+Route::get('/followers/{id}', 'FollowersController@showFollowers');
 
 Route::get('/users/{id}/edit', 'UserController@edit')->middleware('auth')->middleware('user.verifyid');
 
