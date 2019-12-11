@@ -703,46 +703,6 @@ div.modal-container {
   background-color: #fff;
 }
 
-.nav.nav-tabs-custom-colored > li > a {
-  border-color: #ccc;
-  border-bottom: transparent;
-}
-.nav.nav-tabs-custom-colored > li > a:hover, .nav.nav-tabs-custom-colored > li > a:focus {
-  background-color: #1688ae;
-}
-
-.nav-tabs.nav-tabs-custom-colored {
-  border-bottom-color: #1688ae;
-}
-.nav-tabs.nav-tabs-custom-colored > li {
-  z-index: 0;
-  margin-bottom: 0;
-  background-color: #fff;
-}
-.nav-tabs.nav-tabs-custom-colored > li > a {
-  -moz-border-radius-topleft: 2px;
-  -webkit-border-top-left-radius: 2px;
-  border-top-left-radius: 2px;
-  -moz-border-radius-topright: 2px;
-  -webkit-border-top-right-radius: 2px;
-  border-top-right-radius: 2px;
-  color: #696565;
-  margin-right: 0;
-}
-.nav-tabs.nav-tabs-custom-colored > li > a:hover, .nav-tabs.nav-tabs-custom-colored > li > a:focus {
-  color: #fff;
-  border-color: #1688ae;
-}
-.nav-tabs.nav-tabs-custom-colored > li.active > a, .nav-tabs.nav-tabs-custom-colored > li.active > a:hover, .nav-tabs.nav-tabs-custom-colored > li.active > a:focus {
-  color: #fff;
-  background-color: #1688ae;
-  border-color: #1688ae;
-  border-bottom: transparent;
-}
-.nav-tabs > li.active {
-  z-index: 1;
-}
-
 .nav-pills-custom-minimal {
   border-bottom: 1px solid #ccc;
 }
@@ -786,22 +746,4 @@ div.modal-container {
 
 .media-object {
   width: 100px;
-}
-.btn-toggle-following {
-  background-color: #7bae16;
-  color: #fff;
-}
-.btn-toggle-following:hover {
-  background-color: #ef2020;
-  color: #fff;
-}
-.btn-toggle-following:hover span {
-  display: none;
-}
-.btn-toggle-following:hover:after {
-  content: 'Unfollow';
-  display: inline;
-}
-.btn-toggle-following:hover i:before {
-  content: '\f129';
 }
