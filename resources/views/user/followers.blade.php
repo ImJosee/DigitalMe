@@ -9,8 +9,8 @@
         <div class="col-md-12">
             <div class="profile-info-right">
                 <ul class="nav nav-pills nav-pills-custom-minimal custom-minimal-bottom">
-                    <li><a href="#followers" data-toggle="tab">FOLLOWERS</a></li>
-                    <li><a href="#following" data-toggle="tab">FOLLOWING</a></li>
+                    <li><a href="#followers" data-toggle="tab">Seguidores</a></li>
+                    <li><a href="#following" data-toggle="tab">Seguidos</a></li>
                 </ul>
                 <div class="tab-content">
                     <!-- followers -->
@@ -26,7 +26,7 @@
                                     @endif
                                     <div class="media-body">
                                         <a href="/profile/{{$user->id}}">{{$user->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($user->posts()->getResults())}}</span></a><br>
-                                        <button type="button" class="btn btn-sm boton-custom"><span style="color: white;">Follow</span></button>
+                                        <button type="button" class="btn btn-sm boton-custom"><span style="color: white;">Seguir</span></button>
                                     </div>
                                 </a>
                             </div>
@@ -36,7 +36,7 @@
                     <!-- end followers -->
                     <!-- following -->
                     <div class="tab-pane fade" id="following">
-                        @foreach($user->followers()->paginate(12) as $user)
+                        @foreach($user->follows()->paginate(12) as $user)
                         <div class="col-md-3">
                             <div class="media user-following">
                                 <a href="/profile/{{$user->id}}">
@@ -47,7 +47,6 @@
                                     @endif
                                     <div class="media-body">
                                         <a href="/profile/{{$user->id}}">{{$user->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($user->posts()->getResults())}}</span></a><br>
-                                        <button type="button" class="btn btn-sm boton-custom"><span style="color: white;">Follow</span></button>
                                     </div>
                                 </a>
                             </div>
