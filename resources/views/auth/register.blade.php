@@ -21,7 +21,6 @@
                         <strong>Crear una cuenta</strong>
                     </h1>
                     <p>¿Ya tienes una cuenta? <a href="{{ route('login') }}">Iniciar sesión</a></p>
-                    <p>¿Registrando una empresa? <a href="{{ url('registerEnterprise') }}">Haz click aquí</a></p>
                 </div>
                 <div class="form-row">
                     <div class="col">
