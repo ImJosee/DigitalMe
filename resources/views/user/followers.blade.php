@@ -15,43 +15,60 @@
                 <div class="tab-content">
                     <!-- followers -->
                     <div class="tab-pane fade" id="followers">
-                        @foreach($user->followers()->paginate(12) as $user)
-                        <div class="col-md-3">
-                            <div class="media user-follower">
-                                <a href="/profile/{{$user->id}}">
-                                    @if($user->profile_image != null) 
-                                        <img src="/storage/{{$user->profile_image}}" alt="" class="media-object pull-left">
-                                    @else
-                                        <img src="{{ asset('images/profile-img.jpg') }}" alt="" class="media-object pull-left">
-                                    @endif
-                                    <div class="media-body">
-                                        <a href="/profile/{{$user->id}}">{{$user->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($user->posts()->getResults())}}</span></a><br>
-                                        <button type="button" class="btn btn-sm boton-custom"><span style="color: white;">Seguir</span></button>
+                        <div class="col-md-12">
+                            <div class="row">
+                                @foreach($user->followers()->paginate(12) as $user)
+                                <div class="col-md-3">
+                                    <div class="media user-follower">
+                                        <a href="/profile/{{$user->id}}">
+                                            @if($user->profile_image != null) 
+                                                <img src="/storage/{{$user->profile_image}}" alt="" class="media-object pull-left">
+                                            @else
+                                                <img src="{{ asset('images/profile-img.jpg') }}" alt="" class="media-object pull-left">
+                                            @endif
+                                            <div class="media-body">
+                                                <a href="/profile/{{$user->id}}" class="nameFollow">{{$user->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($user->posts()->getResults())}}</span></a><br>
+                                                <form id="follow-form" action="/follow/{{$user->id}}" method="POST">
+                                                    @csrf
+                                                    <button id="follow-button" class="profile-button seguir" type="submit" name="follow" style="font-size: 13px;">
+                                                        @if(auth()->user()->follows->contains('id', $user->id))
+                                                            Dejar de seguir
+                                                        @else
+                                                            Seguir
+                                                        @endif
+                                                    </button>
+                                                </form>  
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
+                                </div>    
+                                @endforeach  
                             </div>
-                        </div>    
-                        @endforeach  
+                        </div>
                     </div>
                     <!-- end followers -->
                     <!-- following -->
                     <div class="tab-pane fade" id="following">
-                        @foreach($user->follows()->paginate(12) as $user)
-                        <div class="col-md-3">
-                            <div class="media user-following">
-                                <a href="/profile/{{$user->id}}">
-                                    @if($user->profile_image != null) 
-                                        <img src="/storage/{{$user->profile_image}}" alt="" class="media-object pull-left">
-                                    @else
-                                        <img src="{{ asset('images/profile-img.jpg') }}" alt="" class="media-object pull-left">
-                                    @endif
-                                    <div class="media-body">
-                                        <a href="/profile/{{$user->id}}">{{$user->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($user->posts()->getResults())}}</span></a><br>
+                        <div class="col-md-12">
+                            <div class="row">
+                                @foreach($user->follows()->paginate(12) as $user)
+                                <div class="col-md-3">
+                                    <div class="media user-following">
+                                        <a href="/profile/{{$user->id}}">
+                                            @if($user->profile_image != null) 
+                                                <img src="/storage/{{$user->profile_image}}" alt="" class="media-object pull-left">
+                                            @else
+                                                <img src="{{ asset('images/profile-img.jpg') }}" alt="" class="media-object pull-left">
+                                            @endif
+                                            <div class="media-body">
+                                                <a href="/profile/{{$user->id}}" class="nameFollow">{{$user->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($user->posts()->getResults())}}</span></a><br>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
+                                </div>    
+                                @endforeach 
                             </div>
-                        </div>    
-                        @endforeach  
+                        </div>
                     </div>
                     <!-- end following -->
                 </div>
