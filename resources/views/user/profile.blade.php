@@ -64,7 +64,7 @@
                         <div class="publicacion">
                             <?php $test = 'images/publicacion'.rand(1,12).'.jpg'?>
                             @if($post->image != null) 
-                                <img src="/storage/{{$user->profile_image}}" alt="">
+                                <img src="/storage/{{$post->image}}" alt="">
                             @else
                                 <img src="{{ asset($test) }}" alt="">
                             @endif
