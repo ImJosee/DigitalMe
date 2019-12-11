@@ -11,10 +11,10 @@
 <div class="container">
     <form class="register-form" action="{{ url('/posts' )}}" method="POST" enctype="multipart/form-data">
         @csrf
-        {{ method_field('POST') }}
+        {{ method_field('PATCH') }}
         <div class="form-row">
             <div class="col">
-                <label class="labels" for="post_image">Imagen Principal</label>
+                <label class="labels" for="post_image">Cambiar imagen principal</label>
                 <input id="post_image" type="file" class="form-control" required name="post_image">
             </div>
         </div>

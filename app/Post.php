@@ -26,6 +26,15 @@ class Post extends Model {
         }
         return $this->title;
     }
+
+    public function getImage() {
+        $test = 'images/publicacion'.rand(1,12).'.jpg';
+        if($this->image != null) {
+            return '/storage/'.$this->image;
+        }  else {
+            return asset($test);
+        }               
+    }
  
     public function likes() {
         return $this->belongsToMany(User::class, 'like_user', 'post_id', 'user_id');

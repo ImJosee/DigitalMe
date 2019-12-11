@@ -7,11 +7,7 @@
     <div class="container-fluid flex">
         <div class="post-image-container">
             <a href="/posts/{{$post->id}}">
-                @if($post->image != null) 
-                    <img id="post-detail" src="/storage/{{$post->image}}" alt="">
-                @else
-                    <img id="post-detail" src="{{ asset('images/publicacion2.jpg') }}" alt="">
-                @endif
+                <img src="{{$post->getImage()}}" alt="">
             </a>
         </div>
         <div class="detalle-post">

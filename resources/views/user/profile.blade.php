@@ -62,12 +62,7 @@
                 <a href="/posts/{{$post->id}}">
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="publicacion">
-                            <?php $test = 'images/publicacion'.rand(1,12).'.jpg'?>
-                            @if($post->image != null) 
-                                <img src="/storage/{{$post->image}}" alt="">
-                            @else
-                                <img src="{{ asset($test) }}" alt="">
-                            @endif
+                            <img src="{{$post->getImage()}}" alt="">
                             <div class="info-post">
                                 <span class="post-info-user">
                                     <div class="post-info-user-container">
