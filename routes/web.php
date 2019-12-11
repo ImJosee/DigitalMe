@@ -20,11 +20,11 @@ Route::get('/profile', 'UserController@profile')->middleware('auth');
 
 Route::get('/users', 'UserController@index');
 
-Route::get('/follows/{id}', 'FollowersController@showFollows');
-
 Route::get('/follows', 'UserController@follows')->middleware('auth');
 
 Route::get('/followers', 'UserController@followers')->middleware('auth');
+
+Route::get('/follows/{id}', 'FollowersController@showFollows');
 
 Route::get('/followers/{id}', 'FollowersController@showFollowers');
 

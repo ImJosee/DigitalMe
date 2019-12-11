@@ -63,10 +63,6 @@ Array.from(profileButtons).forEach(element => {
                     redirectTo('login');
                     break;
                 }
-                case 'follows-button': {
-                    redirectTo('followers');
-                    break;
-                }
             }
         }
     })

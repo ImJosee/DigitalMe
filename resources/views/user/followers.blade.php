@@ -17,21 +17,21 @@
                     <div class="tab-pane fade" id="followers">
                         <div class="col-md-12">
                             <div class="row">
-                                @foreach($user->followers()->paginate(12) as $user)
+                                @forelse($user->followers()->paginate(12) as $followUser)
                                 <div class="col-md-3">
                                     <div class="media user-follower">
-                                        <a href="/profile/{{$user->id}}">
-                                            @if($user->profile_image != null) 
-                                                <img src="/storage/{{$user->profile_image}}" alt="" class="media-object pull-left">
+                                        <a href="/profile/{{$followUser->id}}">
+                                            @if($followUser->profile_image != null) 
+                                                <img src="/storage/{{$followUser->profile_image}}" alt="" class="media-object pull-left">
                                             @else
                                                 <img src="{{ asset('images/profile-img.jpg') }}" alt="" class="media-object pull-left">
                                             @endif
                                             <div class="media-body">
-                                                <a href="/profile/{{$user->id}}" class="nameFollow">{{$user->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($user->posts()->getResults())}}</span></a><br>
-                                                <form id="follow-form" action="/follow/{{$user->id}}" method="POST">
+                                                <a href="/profile/{{$followUser->id}}" class="nameFollow">{{$followUser->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($followUser->posts()->getResults())}}</span></a><br>
+                                                <form id="follow-form" action="/follow/{{$followUser->id}}" method="POST">
                                                     @csrf
                                                     <button id="follow-button" class="profile-button seguir" type="submit" name="follow" style="font-size: 13px;">
-                                                        @if(auth()->user()->follows->contains('id', $user->id))
+                                                        @if(auth()->user()->follows->contains('id', $followUser->id))
                                                             Dejar de seguir
                                                         @else
                                                             Seguir
@@ -42,7 +42,9 @@
                                         </a>
                                     </div>
                                 </div>    
-                                @endforeach  
+                                @empty
+                                    <p>El usuario no tiene seguidores</p>
+                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -51,22 +53,24 @@
                     <div class="tab-pane fade" id="following">
                         <div class="col-md-12">
                             <div class="row">
-                                @foreach($user->follows()->paginate(12) as $user)
+                                @forelse($user->follows()->paginate(12) as $followUser)
                                 <div class="col-md-3">
                                     <div class="media user-following">
-                                        <a href="/profile/{{$user->id}}">
-                                            @if($user->profile_image != null) 
-                                                <img src="/storage/{{$user->profile_image}}" alt="" class="media-object pull-left">
+                                        <a href="/profile/{{$followUser->id}}">
+                                            @if($followUser->profile_image != null) 
+                                                <img src="/storage/{{$followUser->profile_image}}" alt="" class="media-object pull-left">
                                             @else
                                                 <img src="{{ asset('images/profile-img.jpg') }}" alt="" class="media-object pull-left">
                                             @endif
                                             <div class="media-body">
-                                                <a href="/profile/{{$user->id}}" class="nameFollow">{{$user->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($user->posts()->getResults())}}</span></a><br>
+                                                <a href="/profile/{{$followUser->id}}" class="nameFollow">{{$followUser->getFullName()}}<br><span class="text-muted username">Publicaciones: {{count($followUser->posts()->getResults())}}</span></a><br>
                                             </div>
                                         </a>
                                     </div>
                                 </div>    
-                                @endforeach 
+                                @empty
+                                    <p>El usuario no sigue a nadie</p>
+                                @endforelse
                             </div>
                         </div>
                     </div>

@@ -35,12 +35,12 @@ class UserController extends Controller
         return redirect()->action('UserController@show', ['id'=>Auth::user()->id]);
     }
 
-    public function follows() {
-        return redirect()->action('FollowersController@showFollows', ['user'=>auth()->user()]);
+    public function follows(User $user) {
+        return redirect()->action('FollowersController@showFollows', ['user'=>$user]);
     }
 
-    public function followers() {
-        return redirect()->action('FollowersController@showFollowers', ['user'=>auth()->user()]);
+    public function followers(User $user) {
+        return redirect()->action('FollowersController@showFollowers', ['user'=>$user]);
     }
 
 

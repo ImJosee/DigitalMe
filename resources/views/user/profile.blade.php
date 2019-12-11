@@ -25,7 +25,7 @@
                 <button id="send-message-button" class="profile-button mensaje"type="submit" name="message">Mensaje</button>
                 @if(auth()->user()->id === $user->id)
                     <button id="edit-profile-button" data-userid="{{$user->id}}" class="profile-button seguir"type="submit" name="edit-profile">Editar perfil</button>
-                    <button id="follows-button" class="profile-button seguir follows" type="submit" name="follows">Seguidos</button>
+                    <button onclick="redirectTo('followers/{{$user->id}}')"id="follows-button" class="profile-button seguir follows" type="submit" name="follows">Seguidos</button>
                 @else 
                 <form id="follow-form" action="/follow/{{$user->id}}" method="POST">
                     @csrf
