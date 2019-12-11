@@ -14,6 +14,11 @@ lupa.addEventListener('click', event => {
     searchForm.submit();
 })
 
+if(document.querySelector('div.modal-content') != null) {
+    let content = document.querySelector('div.modal-content')
+    content.innerHTML = content.dataset.content
+}
+
 if(document.querySelectorAll('a.question') != null) {
     let questions = document.querySelectorAll('a.question')
     let form = new FormData
