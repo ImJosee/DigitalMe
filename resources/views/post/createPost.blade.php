@@ -4,7 +4,9 @@
 
 @section('content')
 
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+@push('styles')
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+@endpush
 
 <div class="container">
     <form class="register-form" action="{{ url('/posts' )}}" method="POST" enctype="multipart/form-data">
@@ -40,7 +42,7 @@
         <div class="form-row">
             <div class="col">
                 <label class="labels" for="content">Contenido</label>
-                <textarea required class="form-control summernote" name="content"></textarea>
+                <textarea id="summernote" required class="form-control" name="content"></textarea>
                 @error('content')
                     <div class="error-content">
                         <strong style="color: red">{{ $message }}</strong>
@@ -54,15 +56,5 @@
             </div>
         </div>
     </form>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-       $('.summernote').summernote({
-         height:400,
-       });
-   });
-</script>    
+</div>  
 @endsection
