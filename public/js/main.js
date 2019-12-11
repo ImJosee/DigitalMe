@@ -98,6 +98,9 @@ if(password != null && passwordConfirm != null) {
             passwordConfirm.style.border = '1px solid red';
         }
     })
+
+    let footer = document.querySelector('footer.page-footer');
+    footer.style.height = '4rem'
 }
 
 if(document.querySelector('a#like-click')) {
