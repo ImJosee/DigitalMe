@@ -562,33 +562,42 @@ div.button-cnt {
   margin: 15px 0;
 }
 
+div.modal-container {
+  margin-top: 80px;
+}
+
+
 @media (min-width: 1024px) {
 
   div.post-image-container {
-    display: inline-block;
+    display: block;
     width: 30%;
     height: auto;
-    margin-top: 20px;
+    margin: 20px auto;
     box-sizing: border-box;
     border: #000 solid 1px;
   }
 
   img#post-detail {
-    display: inline-block;
+    display: blockblock;
     max-width: 100%;
   }
 
   div.post-title-container {
-    display: inline;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
   }
   div.post-title-container h2#post-title {
-    display: inline-block;
+    display: block;
     color: black;
     text-align: center;
   }
   
   div.post-subtitle-container {
-    display: inline;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
   }
 
   div.modal-container {
@@ -596,14 +605,30 @@ div.button-cnt {
   }
 
   div.post-subtitle-container h3#post-subtitle {
-    display: inline-block;
+    display: block;
     font-size: 2em;
     color: black;
     text-align: center;
   }
 
   .detalle-post {
-    display: inline-block;
+    display: block;
     margin-top: 20px;
+    text-align: center;
+  }
+  div.button-cnt {
+    display: inline;
+    margin: 0 10px;
+  }
+
+  form.hide-form {
+    display: inline;
+  }
+
+  div.buttons-container {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 40px;
   }
 }

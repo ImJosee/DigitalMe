@@ -24,29 +24,31 @@
             {{ $post->subtitle }}
             </h3>
         </div>
-        <div class="modal-container button-cnt">
-            <button id="modal-content-button" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Ver el contenido</button>
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content" data-content="{{ $post->content }}">
+        <div class="buttons-container">
+            <div class="modal-container button-cnt">
+                <button id="modal-content-button" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Ver el contenido</button>
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" data-content="{{ $post->content }}">
+                        </div>
                     </div>
-                </div>
-            </div>         
-        </div>  
-        @if(Auth::check() && auth()->user()->id === $post->user->id)
-            <form action="/posts/{{$post->id}}" method="POST">
-                @csrf
-                {{ method_field('DELETE') }}
-                <div class="delete-container button-cnt">
-                    <button id="delete-post" class="btn btn-danger"type="submit" name="delete-post">Eliminar post</button>
-                </div>
-            </form>
-            <form action="/posts/{{$post->id}}/edit" method="GET">
-                @csrf
-                <div class="edit-container button-cnt">
-                    <button id="edit-post" class="btn btn-warning"type="submit" name="edit-post">Editar post</button>
-                </div>
-            </form>
-        @endif
+                </div>         
+            </div>  
+            @if(Auth::check() && auth()->user()->id === $post->user->id)
+                <form class="hide-form" action="/posts/{{$post->id}}/edit" method="GET">
+                    @csrf
+                    <div class="edit-container button-cnt">
+                        <button id="edit-post" class="btn btn-warning"type="submit" name="edit-post">Editar post</button>
+                    </div>
+                </form>
+                <form class="hide-form" action="/posts/{{$post->id}}" method="POST">
+                    @csrf
+                    {{ method_field('DELETE') }}
+                    <div class="delete-container button-cnt">
+                        <button id="delete-post" class="btn btn-danger"type="submit" name="delete-post">Eliminar post</button>
+                    </div>
+                </form>
+            @endif
+        </div>
 </main>
 @endsection
