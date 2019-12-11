@@ -17,8 +17,8 @@ class CreatePostTechnologieTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('post_id');
             $table->unsignedBigInteger('technologie_id');
-            $table->foreign('post_id')->references('id')->on('posts');
-            $table->foreign('technologie_id')->references('id')->on('technologies');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('technologie_id')->references('id')->on('technologies')->onDelete('cascade');
         });
     }
 

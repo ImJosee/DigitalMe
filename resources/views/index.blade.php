@@ -47,7 +47,7 @@
                         </div>
                     </span>
                     <div class="post-info-data">
-                        <span>1</span>
+                        <span>{{count($post->likes()->getResults())}}</span>
                         <img id="like-icon" src="{{ asset('images/like-icon.png') }}" alt="">
                         <span>{{count($post->getViews()->getResults())}}</span>
                         <img id="view-icon" src="{{ asset('images/view-icon.png') }}" alt="">

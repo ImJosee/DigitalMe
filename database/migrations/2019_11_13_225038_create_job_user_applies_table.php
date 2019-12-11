@@ -18,8 +18,8 @@ class CreateJobUserAppliesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('post_id');
             $table->timestamps();
-            $table->foreign('user_id')->references('user_id')->on('normal_user');
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('user_id')->references('user_id')->on('normal_user')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 

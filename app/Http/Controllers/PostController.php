@@ -60,8 +60,8 @@ class PostController extends Controller {
         //
     }
 
-    public function destroy($id)
-    {
-        //
+    public function destroy(Post $id) {
+        $id->forceDelete();
+        return redirect()->action('UserController@show', ['id' => auth()->user()->id]);
     }
 }

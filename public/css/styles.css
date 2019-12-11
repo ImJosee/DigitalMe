@@ -545,7 +545,7 @@ h6.footer-h6 {
   margin-top: 20px;
 }
 
-div.modal-continer {
+div.modal-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -586,7 +586,7 @@ div.post-image-container {
     display: inline;
   }
 
-  div.modal-continer {
+  div.modal-container {
     display: inline;
   }
 

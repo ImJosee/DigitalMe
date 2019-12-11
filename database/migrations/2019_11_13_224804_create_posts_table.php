@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->integer('views')->default(0);
             $table->enum('post_type', ['NormalPost', 'JobPost']);	
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

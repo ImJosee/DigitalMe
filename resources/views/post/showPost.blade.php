@@ -28,7 +28,7 @@
             {{ $post->subtitle }}
             </h3>
         </div>
-        <div class="modal-continer">
+        <div class="modal-container">
             <button id="modal-content-button" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Ver el contenido</button>
             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -37,5 +37,12 @@
                 </div>
             </div>         
         </div>  
+        @if(Auth::check() && auth()->user()->id === $post->user->id)
+            <form action="/posts/{{$post->id}}" method="POST">
+                @csrf
+                {{ method_field('DELETE') }}
+                <button id="delete-post" class="btn btn-danger"type="submit" name="delete-post">Eliminar post</button>
+            </form>
+        @endif
 </main>
 @endsection
