@@ -556,3 +556,49 @@ div.post-image-container {
   box-sizing: border-box;
   border: #000 solid 1px;
 }
+
+@media (min-width: 1024px) {
+
+  div.post-image-container {
+    display: inline-block;
+    width: 30%;
+    height: auto;
+    margin-top: 20px;
+    box-sizing: border-box;
+    border: #000 solid 1px;
+  }
+
+  img#post-detail {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  div.post-title-container {
+    display: inline;
+  }
+  div.post-title-container h2#post-title {
+    display: inline-block;
+    color: black;
+    text-align: center;
+  }
+  
+  div.post-subtitle-container {
+    display: inline;
+  }
+
+  div.modal-continer {
+    display: inline;
+  }
+
+  div.post-subtitle-container h3#post-subtitle {
+    display: inline-block;
+    font-size: 2em;
+    color: black;
+    text-align: center;
+  }
+
+  .detalle-post {
+    display: inline-block;
+    margin-top: 20px;
+  }
+}

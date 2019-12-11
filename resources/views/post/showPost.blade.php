@@ -15,7 +15,7 @@
             </a>
         </div>
         <div class="detalle-post">
-            Visitas: {{count($post->views()->getResults())}}
+            Visitas: {{count($post->getViews()->getResults())}}
             Likes: {{count($post->likes()->getResults())}}
         </div>  
         <div class="post-title-container">

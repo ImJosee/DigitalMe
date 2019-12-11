@@ -31,7 +31,7 @@ class Post extends Model {
         return $this->belongsToMany(User::class, 'like_user', 'post_id', 'user_id');
     }
 
-    public function views() {
+    public function getViews() {
         return $this->belongsToMany(User::class, 'view_user', 'post_id', 'user_id');
     }
 

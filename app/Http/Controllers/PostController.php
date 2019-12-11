@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller {
 
@@ -40,6 +41,11 @@ class PostController extends Controller {
     public function show($id)
     {
         $post = Post::findOrFail($id);
+        if(Auth::check()) {
+            if(!$post->getViews->contains('id', auth()->user()->id)) {
+                $post->getViews()->attach(auth()->user()->id);
+            }
+        }
         return view('post.showPost', ['post'=>$post]);
     }
 
