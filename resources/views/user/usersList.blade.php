@@ -40,7 +40,7 @@
                 @endif
                 <div class="card-body profile-details">
                     <h5 class="card-title profile-name">{{$user->getFullName()}}</h5>
-                    <p class="card-text profile-text">{{$user->web}}</p>
+                    <p class="card-text profile-text">Publicaciones: {{count($user->posts()->getResults())}}</p>
                     <a href="/profile/{{$user->id}}" class="btn btn-primary profile-btn">Ver perfil</a>
                 </div>
             </div>
