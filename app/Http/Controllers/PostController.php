@@ -49,9 +49,11 @@ class PostController extends Controller {
         return view('post.showPost', ['post'=>$post]);
     }
 
-    public function edit($id)
-    {
-        //
+    public function edit(Post $id) {
+        return view('post.editPost', [
+            'post' => $id
+        ]
+        );
     }
 
 

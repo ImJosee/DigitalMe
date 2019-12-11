@@ -304,10 +304,11 @@ div.descripcion-perfil ul a {
 }
 
 .profile-image {
-  width: 110px;
+  width: 150px;
+  height: 110px;
   background-color: #fff;
-  border-radius: 50%;
   display: inline-block;
+  border-radius: 20%;
   margin: 0 auto;
   border-color: #fff;
   border-style: solid;

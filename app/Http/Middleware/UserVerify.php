@@ -15,8 +15,14 @@ class UserVerify
      * @return mixed
      */
     public function handle($request, Closure $next) {
-        $id = explode('/', $request->getPathInfo())[2];
-        if(!Auth::check() || Auth::user()->id != $id) {
+        $pathArray = explode('/', $request->getPathInfo());
+        if($pathArray[1] == "posts") {
+            if(!Auth::check() || \App\Post::find($pathArray[2])->user->id != auth()->user()->id) {
+                return redirect('/');
+            }
+            return $next($request); 
+        }
+        if(!Auth::check() || auth()->user()->id != $id) {
             return redirect('/');
         }
         return $next($request);

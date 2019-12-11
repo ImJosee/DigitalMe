@@ -43,6 +43,10 @@
                 {{ method_field('DELETE') }}
                 <button id="delete-post" class="btn btn-danger"type="submit" name="delete-post">Eliminar post</button>
             </form>
+            <form action="/posts/{{$post->id}}/edit" method="GET">
+                @csrf
+                <button id="edit-post" class="btn btn-warning"type="submit" name="edit-post">Editar post</button>
+            </form>
         @endif
 </main>
 @endsection

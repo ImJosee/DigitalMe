@@ -30,7 +30,7 @@ Route::patch('/users/{id}', 'UserController@update')->middleware('auth');
 
 Route::get('/posts/{id}', 'PostController@show');
 
-Route::get('/posts/{id}/edit', 'PostController@edit');
+Route::get('/posts/{id}/edit', 'PostController@edit')->middleware('user.verifyid');
 
 Route::patch('/posts/{id}', 'PostController@update');
 
